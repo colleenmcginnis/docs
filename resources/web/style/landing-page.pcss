@@ -1,0 +1,205 @@
+#landing-page {
+
+  &::first-child {
+    padding: 0;
+  }
+
+  .landing-page-section {
+    border-bottom: 1px solid #dee2e6;
+    padding: 30px 0 50px 0;
+  }
+
+  #intro-section {
+    #intro-text {
+      p, li {
+        font-size: 1.25rem;
+      }
+    }
+  
+    .intro-image {
+      background-image: url("img/landing-page/intro.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  
+  .card-contents {
+    cursor: pointer;
+    font-size:1rem;
+    margin:1px;
+    padding:15px;
+    border-radius:6px;
+    box-shadow:rgba(0, 0, 0, 0.08) 0px 0.9px 4px, rgba(0, 0, 0, 0.06) 0px 2.6px 8px, rgba(0, 0, 0, 0.05) 0px 5.7px 12px, rgba(0, 0, 0, 0.04) 0px 15px 15px;
+    color: #000;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 5px, rgba(0, 0, 0, 0.07) 0px 3.6px 13px, rgba(0, 0, 0, 0.06) 0px 8.4px 23px, rgba(0, 0, 0, 0.05) 0px 23px 35px;
+      transform: translateY(-2px);
+      cursor: pointer;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .card-link {
+      font-weight: 600;
+      color: #0077CC;
+      margin-bottom: 0px;
+    }
+  }
+  
+  #capability-tabs {
+
+    #capability-tabs-container {
+      border-radius: 6px;
+      padding: 16px;
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgb(211, 218, 230);
+    }
+    
+    #button-container {
+      height: 45px;
+      border-bottom: 1px solid #dee2e6;
+      
+      .tab-button {
+        padding: 8px 20px;
+        font-size: 1rem;
+        float: left;
+        cursor: pointer;
+      }
+  
+      .app-icon {
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin-right: 8px;
+      }
+      
+  
+      .tab-button.active {
+        font-weight: 700;
+        border-bottom: 2px solid #000;
+      }
+    }
+  
+    #card-container {
+      margin-top:20px;
+  
+      a {
+        &:hover {
+          text-decoration: none!important;
+        }
+      }
+  
+      .card-contents {
+        height: 375px;
+  
+        .card-image {
+          height: 150px;
+          margin-bottom: 20px;
+  
+          &.placeholder {  
+            background-color: #F1F4FA;
+          }
+  
+          &.image-application-logs {
+            background-image: url("img/landing-page/application-logs.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+  
+          &.image-framework-integrations {
+            background-image: url("img/landing-page/framework-integrations.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+  
+          &.image-ingest-logs-metrics-uptime {
+            background-image: url("img/landing-page/ingest-logs-metrics-uptime.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+  
+          &.image-ingest-traces {
+            background-image: url("img/landing-page/ingest-traces.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+  
+          &.image-integrations {
+            background-image: url("img/landing-page/integrations.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+  
+          &.image-open-telemetry {
+            background-image: url("img/landing-page/open-telemetry.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+  
+          &.image-user-experience {
+            background-image: url("img/landing-page/user-experience.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+  
+  #use-cases {
+
+    .use-case-item {
+      margin-top: 20px;
+
+      p {
+        font-size: 1.25rem
+      }
+    }
+  
+    h3 {
+      margin: 0px 0 16px;
+    }
+  
+    ul {
+      padding-left: 1.25rem!important;
+  
+      li {
+        padding-inline-start: 0px;
+  
+        span {
+          position: relative;
+          left: 8px;
+          top: -2px;
+        }
+  
+        &::marker {
+          margin-right:10px;
+          content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="euiIcon eui-alignMiddle css-1h0bwsh-euiIcon-m-isLoaded" role="img" data-icon-type="document" data-is-loaded="true" aria-hidden="true"><path d="M10.8 0c.274 0 .537.113.726.312l3.2 3.428c.176.186.274.433.274.689V15a1 1 0 01-1 1H2a1 1 0 01-1-1V1a1 1 0 011-1h8.8zM14 5h-3.5a.5.5 0 01-.5-.5V1H2v14h12V5zm-8.5 7a.5.5 0 110-1h5a.5.5 0 110 1h-5zm0-3a.5.5 0 010-1h5a.5.5 0 110 1h-5z"></path></svg>');
+        }
+      }
+    }
+    
+  }
+  
+  #related-content {
+
+    .card-contents {
+      margin-bottom: 30px;
+      text-align: center;
+      height: 200px;
+    }
+
+    h3 {
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 1.125rem;
+    }
+  }
+  
+
+}

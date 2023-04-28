@@ -13,6 +13,12 @@ import "./prettify/lang-console";
 import "../lib/prettify/lang-sql";
 import "../lib/prettify/lang-yaml";
 
+// Landing page components
+import Intro from "./components/landing-page/intro_section";
+import TabbedOverview from './components/landing-page/tabbed_overview.jsx'
+import UseCases from "./components/landing-page/use_cases.jsx";
+import RelatedDocs from "./components/landing-page/related_docs";
+
 // Add support for <details> in IE and the like
 import "../../../../../node_modules/details-polyfill";
 
@@ -360,6 +366,23 @@ $(function() {
 
   // Enable Sense widget
   init_sense_widgets();
+  
+  // If it's a landing page, render components
+  if ($('#landing-page')) {
+    // Hide right side bar on landing page
+    $("#right_col").addClass('invisible')
+    $("#middle_col").removeClass('col-lg-7').addClass('col-lg-9')
+    // Render the pieces
+    const introContainer = $('#content #intro-section')
+    mount(introContainer, Intro)
+    const tabContainer = $('#capability-tabs')
+    mount(tabContainer, TabbedOverview)
+    const useCaseContainer = $('#content #use-cases')
+    mount(useCaseContainer, UseCases)
+    const relatedDocsContainer = $('#content #related-content')
+    mount(relatedDocsContainer, RelatedDocs)
+  }
+
   init_console_widgets();
   init_kibana_widgets();
   $("div.ess_widget").each(function() {
