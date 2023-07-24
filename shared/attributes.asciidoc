@@ -172,6 +172,7 @@ Kibana app and UI names
 
 :apm-app:            APM app
 :uptime-app:         Uptime app
+:synthetics-app:     Synthetics app
 :logs-app:           Logs app
 :metrics-app:        Metrics app
 :infrastructure-app: Infrastructure app
@@ -421,6 +422,11 @@ Do not use `endpoint-cloud-sec` in versions 8.5.0 and newer
 :apm-rum-agents:             Elastic APM RUM JavaScript agents
 :apm-lambda-ext:             Elastic APM AWS Lambda extension
 
+:project-monitors:           project monitors
+:project-monitors-cap:       Project monitors
+:private-location:           Private Location
+:private-locations:           Private Locations
+
 :pwd:             YOUR_PASSWORD
 
 :esh: 	ES-Hadoop
@@ -450,6 +456,17 @@ Reusable images
 :yes-icon:         image:https://doc-icons.s3.us-east-2.amazonaws.com/icon-yes.png[Yes,20,15]
 :no-icon:          image:https://doc-icons.s3.us-east-2.amazonaws.com/icon-no.png[No,20,15]
 
+//////////
+GitHub URLs
+//////////
+:apm-py-ref-v:         https://www.elastic.co/guide/en/apm/agent/python/{apm-py-branch}
+:apm-node-ref-v:       https://www.elastic.co/guide/en/apm/agent/nodejs/{apm-node-branch}
+:apm-rum-ref-v:        https://www.elastic.co/guide/en/apm/agent/rum-js/{apm-rum-branch}
+:apm-ruby-ref-v:       https://www.elastic.co/guide/en/apm/agent/ruby/{apm-ruby-branch}
+:apm-java-ref-v:       https://www.elastic.co/guide/en/apm/agent/java/{apm-java-branch}
+:apm-go-ref-v:         https://www.elastic.co/guide/en/apm/agent/go/{apm-go-branch}
+:apm-ios-ref-v:        https://www.elastic.co/guide/en/apm/agent/swift/{apm-ios-branch}
+:apm-dotnet-ref-v:     https://www.elastic.co/guide/en/apm/agent/dotnet/{apm-dotnet-branch}
 //////////
 Issue and pull request URLs
 //////////
