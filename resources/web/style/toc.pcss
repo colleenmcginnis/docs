@@ -5,8 +5,6 @@
     margin: 20px 0px 20px 20px;
   }
   .toc {
-    background-color: #F1F4FA;
-    /* width: 256px; */
     ul {
       margin: 0px 0 3px 0;
       padding: 0;
@@ -30,15 +28,6 @@
       ul {
         border: none;
       }
-       &:not(#book_title):hover {
-        background-color: #F1F4FA;
-        /* border-radius: 20px; */
-      }
-    }
-
-    li.current_page_li {
-      /* background-color: #F1F4FA; */
-      /* border-radius: 20px; */
     }
 
     span {
@@ -56,8 +45,6 @@
     }
 
     .collapsible.show {
-      background-color: #F1F4FA;
-      /* border-radius: 20px; */
       padding-bottom: 5px;
       > ul {
         display: block;
@@ -248,68 +235,5 @@
   #other_versions {
     /* We'll show it if you click "other versions". */
     display: none;
-  }
-}
-
-#cross-book-nav {
-  height: 100vh;
-  background-color: #F1F4FA;
-  position: absolute;
-  width:222px;
-  translate: -270px;
-  ul {
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 0 0 0 0; /* Remove margins */
-    
-    li {
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 8px;
-      cursor: pointer;
-      a {
-        color: #000;
-        
-        &:after {
-          content: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="euiIcon euiIcon--small euiIcon--subdued euiIcon-isLoaded" focusable="false" role="img" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.982 14.043a.75.75 0 01-.025-1.06l4.591-4.81a.25.25 0 000-.346l-4.59-4.81a.75.75 0 011.085-1.035l4.59 4.81a1.75 1.75 0 010 2.416l-4.59 4.81a.75.75 0 01-1.06.024z"></path></svg>');
-          display: inline-block;
-          float: right;
-          width: 12px;
-          height: 12px;
-        }
-      }
-
-      #active-book {
-        /* color: rgb(0, 107, 184); */
-        text-decoration: underline;
-        font-weight: 700;
-      }
-
-      span {
-        
-
-        &:after {
-          content: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="euiIcon euiIcon--small euiIcon--subdued euiIcon-isLoaded" focusable="false" role="img" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.982 14.043a.75.75 0 01-.025-1.06l4.591-4.81a.25.25 0 000-.346l-4.59-4.81a.75.75 0 011.085-1.035l4.59 4.81a1.75 1.75 0 010 2.416l-4.59 4.81a.75.75 0 01-1.06.024z"></path></svg>');
-          display: inline-block;
-          float: right;
-          width: 12px;
-          height: 12px;
-        }
-      }
-    }
-
-    ul {
-      li {
-        font-weight: 400;
-        font-size: 14px;
-        margin-bottom: 0px;
-        
-        a {
-          color: #000;
-          
-          &:after {}
-        }
-      }
-    }
   }
 }

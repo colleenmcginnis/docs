@@ -304,11 +304,6 @@ $(function() {
 
   AlternativeSwitcher(store());
 
-
-  $('.breadcrumbs').after(`<div class="date-edited">Last updated: Apr 4th, 2023</div>`)
-  $('h1').after(`<div class="description">Description to be written</div>`)
-  
-
   // If breadcrumbs contain a dropdown (e.g. APM, ECS Logging)
   // handle interaction with the dropdown
   if ($('#related-products')) {
@@ -464,22 +459,6 @@ $(function() {
       ? `<li>${item.label}<ul>${subItems.join('')}</ul></li>`
       : `<li><a href="${item.link}">${item.label}</a></li>`
     )
-  })
-  
-  
-
-  $('#cross-book-nav').prepend(`<div class="book-name">Global nav</div><ul style="margin-top:20px">${sections.join('')}</ul>`)
-
-  $('#book_title').click(function() {
-    $('#cross-book-nav').show()
-    $("#cross-book-nav").animate({ "left": "+=270px" }, 400 );
-    $("#current-toc").animate({ "left": "+=270px" }, 400 );
-    
-    $('#active-book').click(function() {
-      $("#cross-book-nav").animate({ "left": "-=270px" }, 400 );
-      $("#current-toc").animate({ "left": "-=270px" }, 400 );
-      // $('#cross-book-nav').hide()
-    })
   })
 
   PR.prettyPrint();
