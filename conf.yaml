@@ -133,6 +133,8 @@ contents:
             chunk:      1
             tags:       Elastic/Welcome
             subject:    Welcome to Elastic
+            collection: Getting started
+            book_id:    en/welcome-to-elastic
             sources:
               -
                 repo:   tech-content
@@ -152,6 +154,8 @@ contents:
             chunk:      1
             tags:       Elastic Stack/Installation and Upgrade
             subject:    Elastic Stack
+            collection: Elastic Stack
+            book_id:    en/elastic-stack
             sources:
               -
                 repo:   stack-docs
@@ -207,6 +211,8 @@ contents:
             branches:   [ {main: master} ]
             tags:       Elastic Stack/Glossary
             subject:    Elastic Stack
+            collection: Elastic Stack
+            book_id:    en/elastic-stack-glossary
             sources:
               -
                 repo:   stack-docs
@@ -226,6 +232,8 @@ contents:
             chunk:      1
             tags:       Elastic Stack/Machine Learning
             subject:    Machine Learning
+            collection: Elastic Stack
+            book_id:    en/machine-learning
             sources:
               -
                 repo:   stack-docs
@@ -252,6 +260,8 @@ contents:
             chunk:      1
             tags:       ESRE/Guide
             subject:    ESRE
+            collection: Elastic Stack
+            book_id:    en/esre
             sources:
               -
                 repo:   enterprise-search-pubs
@@ -268,6 +278,8 @@ contents:
             chunk:      2
             tags:       Elastic Common Schema (ECS)/Reference
             subject:    Elastic Common Schema (ECS)
+            collection: Elastic Stack
+            book_id:    en/ecs
             sources:
               -
                 repo:   ecs
@@ -281,6 +293,8 @@ contents:
             chunk:      1
             tags:       Ingest/Reference
             subject:    Ingest
+            collection: Elastic Stack
+            book_id:    en/ingest
             sources:
               -
                 repo:   ingest-docs
@@ -297,6 +311,8 @@ contents:
             noindex:    1
             tags:       Elastic Stack/Azure
             subject:    Azure Marketplace and Resource Manager (ARM) template
+            collection: Elastic Stack
+            book_id:    en/elastic-stack-deploy
             sources:
               -
                 repo:   azure-marketplace
@@ -313,6 +329,8 @@ contents:
             chunk:      1
             tags:       Elasticsearch/Reference
             subject:    Elasticsearch
+            collection: Elasticsearch
+            book_id:    en/elasticsearch/reference
             sources:
               -
                 repo:   elasticsearch
@@ -422,6 +440,8 @@ contents:
             single:     1
             tags:       Elasticsearch/Resiliency Status
             subject:    Elasticsearch
+            collection: Elasticsearch
+            book_id:    en/elasticsearch/resiliency
             sources:
               -
                 repo:   elasticsearch
@@ -446,6 +466,8 @@ contents:
             chunk:      1
             tags:       Elasticsearch/Painless
             subject:    Elasticsearch
+            collection: Elasticsearch
+            book_id:    en/elasticsearch/painless
             sources:
               -
                 repo:   elasticsearch
@@ -471,6 +493,8 @@ contents:
             chunk:      2
             tags:       Elasticsearch/Plugins
             subject:    Elasticsearch
+            collection: Elasticsearch
+            book_id:    en/elasticsearch/plugins
             sources:
               -
                 repo:   elasticsearch
@@ -512,6 +536,9 @@ contents:
                 chunk:      1
                 tags:       Clients/Java
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/java-api-client
                 sources:
                   -
                     repo:   elasticsearch-java
@@ -534,6 +561,9 @@ contents:
                 chunk:      1
                 tags:       Clients/JavaScript
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/javascript-api
                 sources:
                   -
                     repo:   elasticsearch-js
@@ -547,6 +577,9 @@ contents:
                 chunk:      1
                 tags:       Clients/Ruby
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/ruby-api
                 sources:
                   -
                     repo:   elasticsearch-ruby
@@ -560,6 +593,9 @@ contents:
                 chunk:      1
                 tags:       Clients/Go
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/go-api
                 sources:
                   -
                     repo:   go-elasticsearch
@@ -572,6 +608,9 @@ contents:
                 index:      docs/index.asciidoc
                 tags:       Clients/.Net
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/net-api
                 chunk:      1
                 sources:
                   -
@@ -589,6 +628,9 @@ contents:
                 chunk:      1
                 tags:       Clients/PHP
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/php-api
                 sources:
                   -
                     repo:   elasticsearch-php
@@ -605,6 +647,9 @@ contents:
                 chunk:      1
                 tags:       Clients/Perl
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/perl-api
                 sources:
                   -
                     repo:   elasticsearch-perl
@@ -618,6 +663,9 @@ contents:
                 chunk:     1
                 tags:       Clients/Python
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/python-api
                 sources:
                   -
                     repo:   elasticsearch-py
@@ -631,6 +679,9 @@ contents:
                 chunk:     1
                 tags:       Clients/eland
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/eland
                 sources:
                   -
                     repo:   eland
@@ -644,6 +695,9 @@ contents:
                 chunk:     1
                 tags:       Clients/Rust
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/rust-api
                 sources:
                   -
                     repo:   elasticsearch-rs
@@ -656,6 +710,9 @@ contents:
                 index:      docs/java-rest/index.asciidoc
                 tags:       Clients/JavaREST
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/java-rest
                 chunk:      1
                 sources:
                   -
@@ -684,6 +741,9 @@ contents:
                 index:      docs/java-api/index.asciidoc
                 tags:       Clients/Java
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/java-api
                 chunk:      1
                 sources:
                   -
@@ -731,6 +791,9 @@ contents:
                 single:     1
                 tags:       Clients/Community
                 subject:    Clients
+                collection: Elasticsearch
+                group:      Elasticsearch Clients
+                book_id:    en/elasticsearch/client/community
                 sources:
                   -
                     repo:   elasticsearch
@@ -743,6 +806,8 @@ contents:
             index:      docs/src/reference/asciidoc/index.adoc
             tags:       Elasticsearch/Apache Hadoop
             subject:    Elasticsearch
+            collection: Elasticsearch
+            book_id:    en/elasticsearch/hadoop
             sources:
               -
                 repo:   elasticsearch-hadoop
@@ -754,6 +819,8 @@ contents:
             index:      docs/asciidoc/index.asciidoc
             tags:       Clients/Curator
             subject:    Clients
+            collection: Elasticsearch
+            book_id:    en/elasticsearch/client/curator
             sources:
               -
                 repo:   curator
@@ -765,6 +832,8 @@ contents:
             prefix:     en/cloud
             tags:       Cloud/Reference
             subject:    Elastic Cloud
+            collection: Elastic Cloud
+            book_id:    en/cloud
             current:    *cloudSaasCurrent
             branches:   [ { *cloudSaasCurrent : latest} ]
             index:      docs/saas/index.asciidoc
@@ -781,6 +850,8 @@ contents:
             prefix:     en/cloud-heroku
             tags:       Cloud-Heroku/Reference
             subject:    Elasticsearch Add-On for Heroku
+            collection: Elastic Cloud
+            book_id:    en/cloud-heroku
             current:    *cloudSaasCurrent
             branches:   [ { *cloudSaasCurrent : latest} ]
             index:      docs/heroku/index.asciidoc
@@ -801,6 +872,8 @@ contents:
             prefix:     en/cloud-enterprise
             tags:       CloudEnterprise/Reference
             subject:    ECE
+            collection: Elastic Cloud
+            book_id:    en/cloud-enterprise
             current:    ms-92
             live:
               - ms-92
@@ -912,6 +985,8 @@ contents:
             prefix:     en/cloud-on-k8s
             tags:       Kubernetes/Reference
             subject:    ECK
+            collection: Elastic Cloud
+            book_id:    en/cloud-on-k8s
             current:    2.9
             branches:   [ {main: master}, 2.9, 2.8, 2.7, 2.6, 2.5, 2.4, 2.3, 2.2, 2.1, 2.0, 1.9, 1.8, 1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.0, 1.0-beta, 0.9, 0.8 ]
             index:      docs/index.asciidoc
@@ -931,6 +1006,8 @@ contents:
             prefix:     en/ecctl
             tags:       CloudControl/Reference
             subject:    ECCTL
+            collection: Elastic Cloud
+            book_id:    en/ecctl
             current:    1.9
             branches:   [ master, 1.9, 1.8, 1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.0 ]
             index:      docs/index.asciidoc
@@ -943,6 +1020,8 @@ contents:
             prefix:     en/tpec
             tags:       CloudTerraform/Reference
             subject:    TPEC
+            collection: Elastic Cloud
+            book_id:    en/tpec
             current:    0.2
             branches:   [ master, 0.2, 0.1 ]
             index:      docs-elastic/index.asciidoc
@@ -964,6 +1043,8 @@ contents:
             chunk:      1
             tags:       Kibana/Reference
             subject:    Kibana
+            collection: Kibana
+            book_id:    en/kibana
             toc_extra:  extra/kibana_landing.html
             sources:
               -
@@ -1016,6 +1097,8 @@ contents:
             chunk:      1
             tags:       Enterprise Search/Guide
             subject:    Enterprise Search
+            collection: Enterprise Search
+            book_id:    en/enterprise-search
             sources:
               -
                 repo:   enterprise-search-pubs
@@ -1033,6 +1116,8 @@ contents:
             chunk:      1
             tags:       Workplace Search/Guide
             subject:    Workplace Search
+            collection: Enterprise Search
+            book_id:    en/workplace-search
             sources:
               -
                 repo:   enterprise-search-pubs
@@ -1050,6 +1135,8 @@ contents:
             chunk:      1
             tags:       App Search/Guide
             subject:    App Search
+            collection: Enterprise Search
+            book_id:    en/app-search
             sources:
               -
                 repo:   enterprise-search-pubs
@@ -1066,6 +1153,8 @@ contents:
             single:     1
             tags:       Site Search/Reference
             subject:    Swiftype
+            collection: Enterprise Search
+            book_id:    en/swiftype/sitesearch
             sources:
               -
                 repo:   swiftype
@@ -1083,6 +1172,9 @@ contents:
                 index:      client-docs/app-search-javascript/index.asciidoc
                 tags:       App Search Clients/JavaScript
                 subject:    App Search Clients
+                collection: Enterprise Search
+                group:      Enterprise Search Clients
+                book_id:    en/enterprise-search-clients/app-search-javascript
                 sources:
                   -
                     repo:   enterprise-search-pubs
@@ -1100,6 +1192,9 @@ contents:
                 index:      client-docs/app-search-node/index.asciidoc
                 tags:       App Search Clients/Node.js
                 subject:    App Search Clients
+                collection: Enterprise Search
+                group:      Enterprise Search Clients
+                book_id:    en/enterprise-search-clients/app-search-node
                 sources:
                   -
                     repo:   enterprise-search-pubs
@@ -1115,6 +1210,9 @@ contents:
                 index:      packages/enterprise-search/docs/index.asciidoc
                 tags:       Enterprise Search Clients/Node.js
                 subject:    Enterprise Search Clients
+                collection: Enterprise Search
+                group:      Enterprise Search Clients
+                book_id:    en/enterprise-search-clients/enterprise-search-node
                 sources:
                   -
                     repo:   enterprise-search-js
@@ -1130,6 +1228,9 @@ contents:
                 index:      docs/guide/index.asciidoc
                 tags:       Enterprise Search Clients/PHP
                 subject:    Enterprise Search Clients
+                collection: Enterprise Search
+                group:      Enterprise Search Clients
+                book_id:    en/enterprise-search-clients/php
                 sources:
                   -
                     repo:   enterprise-search-php
@@ -1145,6 +1246,9 @@ contents:
                 index:      docs/guide/index.asciidoc
                 tags:       Enterprise Search Clients/Python
                 subject:    Enterprise Search Clients
+                collection: Enterprise Search
+                group:      Enterprise Search Clients
+                book_id:    en/enterprise-search-clients/python
                 sources:
                   -
                     repo:   enterprise-search-python
@@ -1160,6 +1264,9 @@ contents:
                 index:      docs/guide/index.asciidoc
                 tags:       Enterprise Search Clients/Ruby
                 subject:    Enterprise Search Clients
+                collection: Enterprise Search
+                group:      Enterprise Search Clients
+                book_id:    en/enterprise-search-clients/ruby
                 sources:
                   -
                     repo:   enterprise-search-ruby
@@ -1177,6 +1284,9 @@ contents:
                 index:      client-docs/workplace-search-node/index.asciidoc
                 tags:       Workplace Search Clients/Node.js
                 subject:    Workplace Search Clients
+                collection: Enterprise Search
+                group:      Enterprise Search Clients
+                book_id:    en/enterprise-search-clients/workplace-search-node
                 sources:
                   -
                     repo:   enterprise-search-pubs
@@ -1195,6 +1305,8 @@ contents:
             chunk:      2
             tags:       Observability/Guide
             subject:    Observability
+            collection: Observability
+            book_id:    en/observability
             sources:
               -
                 repo:   observability-docs
@@ -1228,6 +1340,8 @@ contents:
                 chunk:      2
                 tags:       APM Guide
                 subject:    APM
+                collection: Observability
+                book_id:    en/apm/guide
                 sources:
                   -
                     repo:   apm-server
@@ -1259,6 +1373,9 @@ contents:
                     index:      docs/index.asciidoc
                     tags:       APM Android Agent/Reference
                     subject:    APM
+                    collection: Observability
+                    group:      APM Agents
+                    book_id:    apm/agent/android
                     chunk:      1
                     sources:
                       -
@@ -1275,6 +1392,9 @@ contents:
                     index:      docs/index.asciidoc
                     tags:       APM Go Agent/Reference
                     subject:    APM
+                    collection: Observability
+                    group:      APM Agents
+                    book_id:    apm/agent/go
                     chunk:      1
                     sources:
                       -
@@ -1292,6 +1412,9 @@ contents:
                     index: docs/index.asciidoc
                     tags: APM iOS Agent/Reference
                     subject: APM
+                    collection: Observability
+                    group:      APM Agents
+                    book_id:    apm/agent/swift
                     chunk: 1
                     sources:
                       -
@@ -1308,6 +1431,9 @@ contents:
                     index:      docs/index.asciidoc
                     tags:       APM Java Agent/Reference
                     subject:    APM
+                    collection: Observability
+                    group:      APM Agents
+                    book_id:    apm/agent/java
                     chunk:      1
                     sources:
                       -
@@ -1331,6 +1457,9 @@ contents:
                     index:      docs/index.asciidoc
                     tags:       APM .NET Agent/Reference
                     subject:    APM
+                    collection: Observability
+                    group:      APM Agents
+                    book_id:    apm/agent/dotnet
                     chunk:      1
                     sources:
                       -
@@ -1347,6 +1476,9 @@ contents:
                     index:      docs/index.asciidoc
                     tags:       APM Node.js Agent/Reference
                     subject:    APM
+                    collection: Observability
+                    group:      APM Agents
+                    book_id:    apm/agent/nodejs
                     chunk:      1
                     sources:
                       -
@@ -1370,6 +1502,9 @@ contents:
                     index:      docs/index.asciidoc
                     tags:       APM PHP Agent/Reference
                     subject:    APM
+                    collection: Observability
+                    group:      APM Agents
+                    book_id:    apm/agent/php
                     chunk:      1
                     sources:
                       -
@@ -1386,6 +1521,9 @@ contents:
                     index:      docs/index.asciidoc
                     tags:       APM Python Agent/Reference
                     subject:    APM
+                    collection: Observability
+                    group:      APM Agents
+                    book_id:    apm/agent/python
                     chunk:      1
                     sources:
                       -
@@ -1409,6 +1547,9 @@ contents:
                     index:      docs/index.asciidoc
                     tags:       APM Ruby Agent/Reference
                     subject:    APM
+                    collection: Observability
+                    group:      APM Agents
+                    book_id:    apm/agent/ruby
                     chunk:      1
                     sources:
                       -
@@ -1426,6 +1567,9 @@ contents:
                     index:      docs/index.asciidoc
                     tags:       APM Real User Monitoring JavaScript Agent/Reference
                     subject:    APM
+                    collection: Observability
+                    group:      APM Agents
+                    book_id:    apm/agent/rum-js
                     chunk:      1
                     sources:
                       -
@@ -1443,6 +1587,9 @@ contents:
                 index:      docs/index.asciidoc
                 tags:       APM AWS Lambda extension/Reference
                 subject:    APM
+                collection: Observability
+                group:      APM Extensions
+                book_id:    en/apm/lambda
                 chunk:      1
                 sources:
                   -
@@ -1459,6 +1606,9 @@ contents:
                 index:      docs/index.asciidoc
                 tags:       APM Attacher/Reference
                 subject:    APM
+                collection: Observability
+                group:      APM Extensions
+                book_id:    en/apm/attacher
                 chunk:      1
                 sources:
                   -
@@ -1474,6 +1624,8 @@ contents:
                     chunk:      1
                     tags:       APM Server/Reference
                     subject:    APM
+                    collection: Legacy Documentation
+                    book_id:    en/apm/get-started
                     sources:
                       -
                         repo:   apm-server
@@ -1489,6 +1641,8 @@ contents:
                     chunk:      1
                     tags:       APM Server/Reference
                     subject:    APM
+                    collection: Legacy Documentation
+                    book_id:    en/apm/server
                     sources:
                       -
                         repo:   apm-server
@@ -1512,6 +1666,9 @@ contents:
                 chunk:      1
                 tags:       ECS-logging/Guide
                 subject:    ECS Logging Overview
+                collection: Observability
+                group:      ECS logging
+                book_id:    en/ecs-logging/overview
                 sources:
                   -
                     repo:   ecs-logging
@@ -1531,6 +1688,9 @@ contents:
                 chunk:      1
                 tags:       ECS-logging/go-logrus/Guide
                 subject:    ECS Logging Go (Logrus) Reference
+                collection: Observability
+                group:      ECS logging
+                book_id:    en/ecs-logging/go-logrus
                 sources:
                   -
                     repo:   ecs-logging-go-logrus
@@ -1553,6 +1713,9 @@ contents:
                 chunk:      1
                 tags:       ECS-logging/go-zap/Guide
                 subject:    ECS Logging Go (Zap) Reference
+                collection: Observability
+                group:      ECS logging
+                book_id:    en/ecs-logging/go-zap
                 sources:
                   -
                     repo:   ecs-logging-go-zap
@@ -1576,6 +1739,9 @@ contents:
                 chunk:      1
                 tags:       ECS-logging/java/Guide
                 subject:    ECS Logging Java Reference
+                collection: Observability
+                group:      ECS logging
+                book_id:    en/ecs-logging/java
                 sources:
                   -
                     repo:   ecs-logging-java
@@ -1601,6 +1767,9 @@ contents:
                 chunk:      1
                 tags:       ECS-logging/.NET/Guide
                 subject:    ECS Logging .NET Reference
+                collection: Observability
+                group:      ECS logging
+                book_id:    en/ecs-logging/dotnet
                 sources:
                   -
                     repo:   ecs-dotnet
@@ -1623,6 +1792,9 @@ contents:
                 chunk:      1
                 tags:       ECS-logging/nodejs/Guide
                 subject:    ECS Logging Node.js Reference
+                collection: Observability
+                group:      ECS logging
+                book_id:    en/ecs-logging/nodejs
                 sources:
                   -
                     repo:   ecs-logging-nodejs
@@ -1645,6 +1817,9 @@ contents:
                 chunk:      1
                 tags:       ECS-logging/ruby/Guide
                 subject:    ECS Logging Ruby Reference
+                collection: Observability
+                group:      ECS logging
+                book_id:    en/ecs-logging/ruby
                 sources:
                   -
                     repo:   ecs-logging-ruby
@@ -1667,6 +1842,9 @@ contents:
                 chunk:      1
                 tags:       ECS-logging/php/Guide
                 subject:    ECS Logging PHP Reference
+                collection: Observability
+                group:      ECS logging
+                book_id:    en/ecs-logging/php
                 sources:
                   -
                     repo:   ecs-logging-php
@@ -1689,6 +1867,9 @@ contents:
                 chunk:      1
                 tags:       ECS-logging/python/Guide
                 subject:    ECS Logging Python Reference
+                collection: Observability
+                group:      ECS logging
+                book_id:    en/ecs-logging/python
                 sources:
                   -
                     repo:   ecs-logging-python
@@ -1714,6 +1895,8 @@ contents:
             chunk:      1
             tags:       Security/Guide
             subject:    Security
+            collection: Security
+            book_id:    en/security
             sources:
               -
                 repo:   security-docs
@@ -1736,6 +1919,8 @@ contents:
             chunk:      1
             tags:       SIEM/Guide
             subject:    SIEM
+            collection: Security
+            book_id:    en/siem/guide
             sources:
               -
                 repo:   stack-docs
@@ -1759,6 +1944,8 @@ contents:
             chunk:      1
             tags:       Logstash/Reference
             subject:    Logstash
+            collection: Data ingest
+            book_id:    en/logstash
             respect_edit_url_overrides: true
             sources:
               -
@@ -1799,6 +1986,8 @@ contents:
             noindex:    1
             tags:       Logstash/Plugin Reference
             subject:    Logstash
+            collection: Data ingest
+            book_id:    en/logstash-versioned-plugins
             sources:
               -
                 repo:   logstash-docs
@@ -1818,6 +2007,8 @@ contents:
             chunk:      2
             tags:       Fleet/Guide/Elastic Agent
             subject:    Fleet and Elastic Agent
+            collection: Data ingest
+            book_id:    en/fleet
             sources:
               -
                 repo:   ingest-docs
@@ -1845,6 +2036,8 @@ contents:
             chunk:      1
             tags:       Integrations/Developer
             subject:    Integrations
+            collection: Data ingest
+            book_id:    en/integrations-developer
             sources:
               -
                 repo:   observability-docs
@@ -1873,6 +2066,8 @@ contents:
             chunk:      2
             tags:       Cloud Native Ingest/Reference
             subject:    cloud native ingest
+            collection: Data ingest
+            book_id:    en/esf
             sources:
               -
                 repo:   esf
@@ -1893,6 +2088,8 @@ contents:
             chunk:      1
             tags:       Cloud Native Ingest/Reference
             subject:    cloud native ingest
+            collection: Data ingest
+            book_id:    en/kinesis
             sources:
               -
                 repo:   observability-docs
@@ -1915,6 +2112,9 @@ contents:
             chunk:      1
             tags:       Libbeat/Reference
             subject:    libbeat
+            collection: Data ingest
+            group:      Beats
+            book_id:    en/beats/libbeat
             respect_edit_url_overrides: true
             sources:
               -
@@ -1941,6 +2141,9 @@ contents:
             tags:       Auditbeat/Reference
             respect_edit_url_overrides: true
             subject:    Auditbeat
+            collection: Data ingest
+            group:      Beats
+            book_id:    en/beats/auditbeat
             sources:
               -
                 repo:   beats
@@ -1994,6 +2197,9 @@ contents:
             tags:       Filebeat/Reference
             respect_edit_url_overrides: true
             subject:    Filebeat
+            collection: Data ingest
+            group:      Beats
+            book_id:    en/beats/filebeat
             sources:
               -
                 repo:   beats
@@ -2049,6 +2255,9 @@ contents:
             tags:       Functionbeat/Reference
             respect_edit_url_overrides: true
             subject:    Functionbeat
+            collection: Data ingest
+            group:      Beats
+            book_id:    en/beats/functionbeat
             sources:
               -
                 repo:   beats
@@ -2098,6 +2307,9 @@ contents:
             tags:       Heartbeat/Reference
             respect_edit_url_overrides: true
             subject:    Heartbeat
+            collection: Data ingest
+            group:      Beats
+            book_id:    en/beats/heartbeat
             sources:
               -
                 repo:   beats
@@ -2145,6 +2357,9 @@ contents:
             tags:       Metricbeat/Reference
             respect_edit_url_overrides: true
             subject:    Metricbeat
+            collection: Data ingest
+            group:      Beats
+            book_id:    en/beats/metricbeat
             sources:
               -
                 repo:   beats
@@ -2202,6 +2417,9 @@ contents:
             tags:       Packetbeat/Reference
             respect_edit_url_overrides: true
             subject:    Packetbeat
+            collection: Data ingest
+            group:      Beats
+            book_id:    en/beats/packetbeat
             sources:
               -
                 repo:   beats
@@ -2245,6 +2463,9 @@ contents:
             tags:       Winlogbeat/Reference
             respect_edit_url_overrides: true
             subject:    Winlogbeat
+            collection: Data ingest
+            group:      Beats
+            book_id:    en/beats/winlogbeat
             sources:
               -
                 repo:   beats
@@ -2287,6 +2508,9 @@ contents:
             chunk:      1
             tags:       Devguide/Reference
             subject:    Beats
+            collection: Data ingest
+            group:      Beats
+            book_id:    en/beats/devguide
             respect_edit_url_overrides: true
             sources:
               -
@@ -2318,6 +2542,9 @@ contents:
             tags:       Elastic Logging Plugin/Reference
             respect_edit_url_overrides: true
             subject:    Elastic Logging Plugin
+            collection: Data ingest
+            group:      Beats
+            book_id:    en/beats/loggingplugin
             sources:
               -
                 repo:   beats
@@ -2343,6 +2570,8 @@ contents:
             chunk:      1
             tags:       Logstash/Kubernetes
             subject:    Logstash
+            collection: Docs in Development
+            book_id:    en/logstash-kubernetes
             sources:
               -
                 repo:   logstash
@@ -2363,6 +2592,8 @@ contents:
             noindex:    1
             tags:       Elastic Stack/Getting started
             subject:    Elastic Stack
+            collection: Legacy Documentation
+            book_id:    en/elastic-stack-get-started
             sources:
               -
                 repo:   stack-docs
@@ -2388,6 +2619,8 @@ contents:
             chunk:      1
             tags:       Elastic Stack/Google
             subject:    Elastic Stack
+            collection: Legacy Documentation
+            book_id:    en/elastic-stack-gke
             sources:
               -
                 repo:   stack-docs
@@ -2407,6 +2640,8 @@ contents:
             tags:       Journalbeat/Reference
             respect_edit_url_overrides: true
             subject:    Journalbeat
+            collection: Legacy Documentation
+            book_id:    en/beats/journalbeat
             sources:
               -
                 repo:   beats
@@ -2447,6 +2682,8 @@ contents:
             private:    1
             tags:       Logs/Guide
             subject:    Logs
+            collection: Legacy Documentation
+            book_id:    en/logs/guide
             sources:
               -
                 repo:   observability-docs
@@ -2466,6 +2703,8 @@ contents:
             private:    1
             tags:       Metrics/Guide
             subject:    Metrics
+            collection: Legacy Documentation
+            book_id:    en/metrics/guide
             sources:
               -
                 repo:   observability-docs
@@ -2485,6 +2724,8 @@ contents:
             private:    1
             tags:       Uptime/Guide
             subject:    Uptime
+            collection: Legacy Documentation
+            book_id:    en/uptime
             sources:
               -
                 repo:   observability-docs
@@ -2504,6 +2745,8 @@ contents:
             private:    1
             tags:       Infrastructure/Guide
             subject:    Infrastructure
+            collection: Legacy Documentation
+            book_id:    en/infrastructure/guide
             sources:
               -
                 repo:   stack-docs
@@ -2523,6 +2766,8 @@ contents:
             noindex:    1
             tags:       Legacy/Elastic Stack/Overview
             subject:    Elastic Stack
+            collection: Legacy Documentation
+            book_id:    en/elastic-stack-overview
             sources:
               -
                 repo:   stack-docs
@@ -2544,6 +2789,8 @@ contents:
             tags:       Legacy/XPack/Reference
             current:    6.2
             subject:    X-Pack
+            collection: Legacy Documentation
+            book_id:    en/x-pack
             index:      docs/en/index.asciidoc
             branches:   [ 6.2, 6.1, 6.0, 5.6, 5.5, 5.4, 5.3, 5.2, 5.1, 5.0 ]
             sources:
@@ -2574,6 +2821,8 @@ contents:
             private:    1
             tags:       Legacy/Elasticsearch/Definitive Guide
             subject:    Elasticsearch
+            collection: Legacy Documentation
+            book_id:    en/elasticsearch/guide
             suppress_migration_warnings: true
             sources:
               -
@@ -2592,6 +2841,8 @@ contents:
             private:    1
             tags:       Legacy/Elasticsearch/Sense-Editor
             subject:    Sense
+            collection: Legacy Documentation
+            book_id:    en/sense
             sources:
               -
                 repo:   sense
@@ -2603,6 +2854,8 @@ contents:
             noindex:    1
             tags:       Legacy/Marvel/Reference
             subject:    Marvel
+            collection: Legacy Documentation
+            book_id:    en/marvel
             current:    2.4
             index:      docs/public/marvel/index.asciidoc
             branches:   [ 2.4, 2.3, 2.2, 2.1, 2.0, {marvel-1.3: 1.3}]
@@ -2621,6 +2874,8 @@ contents:
             noindex:    1
             tags:       Legacy/Shield/Reference
             subject:    Shield
+            collection: Legacy Documentation
+            book_id:    en/shield
             current:    2.4
             index:      docs/public/shield/index.asciidoc
             branches:   [2.4, 2.3, 2.2, 2.1, 2.0, {shield-1.3: 1.3}, {shield-1.2: 1.2}, {shield-1.1: 1.1}, {shield-1.0: 1.0}]
@@ -2639,6 +2894,8 @@ contents:
             noindex:    1
             tags:       Legacy/Watcher/Reference
             subject:    Watcher
+            collection: Legacy Documentation
+            book_id:    en/watcher
             current:    2.4
             index:      docs/public/watcher/index.asciidoc
             branches:   [2.4, 2.3, 2.2, 2.1, 2.0, {watcher-1.0: 1.0}]
@@ -2656,6 +2913,8 @@ contents:
             noindex:    1
             tags:       Legacy/Reporting/Reference
             subject:    Reporting
+            collection: Legacy Documentation
+            book_id:    en/reporting
             current:    2.4
             index:      docs/public/reporting/index.asciidoc
             branches:   [ 2.4 ]
@@ -2671,6 +2930,8 @@ contents:
             noindex:    1
             tags:       Legacy/Graph/Reference
             subject:    Graph
+            collection: Legacy Documentation
+            book_id:    en/graph
             current:    2.4
             index:      docs/public/graph/index.asciidoc
             branches:   [ 2.4, 2.3 ]
@@ -2690,6 +2951,8 @@ contents:
             noindex:    1
             tags:       Legacy/Clients/Groovy
             subject:    Clients
+            collection: Legacy Documentation
+            book_id:    en/elasticsearch/client/groovy-api
             sources:
               -
                 repo:   elasticsearch
@@ -2708,6 +2971,8 @@ contents:
             tags:       Legacy/Topbeat/Reference
             respect_edit_url_overrides: true
             subject:    Topbeat
+            collection: Legacy Documentation
+            book_id:    en/beats/topbeat
             sources:
               -
                 repo:   beats
@@ -2728,6 +2993,8 @@ contents:
             noindex:    1
             tags:       Legacy/Clients/Elasticsearch-js
             subject:    Clients
+            collection: Legacy Documentation
+            book_id:    en/elasticsearch/client/elasticsearch-js
             sources:
               -
                 repo:   elasticsearch-js-legacy
@@ -2748,6 +3015,8 @@ contents:
                 lang:       zh_cn
                 tags:       Elasticsearch/Definitive Guide
                 subject:    Elasticsearch
+                collection: Legacy Documentation
+                book_id:    cn/elasticsearch/guide
                 suppress_migration_warnings: true
                 sources:
                   -
@@ -2762,6 +3031,8 @@ contents:
                 lang:       zh_cn
                 tags:       Elasticsearch/PHP
                 subject:    Elasticsearch
+                collection: Legacy Documentation
+                book_id:    cn/elasticsearch/php
                 sources:
                   -
                     repo: elasticsearch-php-cn
@@ -2777,6 +3048,8 @@ contents:
                 private:    1
                 tags:       Kibana/Reference
                 subject:    Kibana
+                collection: Legacy Documentation
+                book_id:    cn/kibana
                 sources:
                   -
                     repo: kibana-cn
@@ -2796,6 +3069,8 @@ contents:
                 lang:       ja
                 tags:       Elasticsearch/Reference
                 subject:    Elasticsearch
+                collection: Legacy Documentation
+                book_id:    jp/elasticsearch/reference
                 sources:
                   -
                     repo: elasticsearch
@@ -2814,6 +3089,8 @@ contents:
                 lang:       ja
                 tags:       Logstash/Reference
                 subject:    Logstash
+                collection: Legacy Documentation
+                book_id:    jp/logstash
                 sources:
                   -
                     repo: logstash
@@ -2829,6 +3106,8 @@ contents:
                 lang:       ja
                 tags:       Kibana/Reference
                 subject:    Kibana
+                collection: Legacy Documentation
+                book_id:    jp/kibana
                 sources:
                   -
                     repo: kibana
@@ -2844,6 +3123,8 @@ contents:
                 lang:       ja
                 tags:       X-Pack/Reference
                 subject:    X-Pack
+                collection: Legacy Documentation
+                book_id:    jp/x-pack
                 sources:
                   -
                     repo: x-pack
@@ -2871,6 +3152,8 @@ contents:
                 lang:       ko
                 tags:       Elasticsearch/Reference
                 subject:    Elasticsearch
+                collection: Legacy Documentation
+                book_id:    kr/elasticsearch/reference
                 sources:
                   -
                     repo: elasticsearch
@@ -2889,6 +3172,8 @@ contents:
                 lang:       ko
                 tags:       Logstash/Reference
                 subject:    Logstash
+                collection: Legacy Documentation
+                book_id:    kr/logstash
                 sources:
                   -
                     repo: logstash
@@ -2904,6 +3189,8 @@ contents:
                 lang:       ko
                 tags:       Kibana/Reference
                 subject:    Kibana
+                collection: Legacy Documentation
+                book_id:    kr/kibana
                 sources:
                   -
                     repo: kibana
@@ -2919,6 +3206,8 @@ contents:
                 lang:       ko
                 tags:       X-Pack/Reference
                 subject:    X-Pack
+                collection: Legacy Documentation
+                book_id:    kr/x-pack
                 sources:
                   -
                     repo: x-pack
