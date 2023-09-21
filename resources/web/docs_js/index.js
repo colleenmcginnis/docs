@@ -405,13 +405,17 @@ $(function() {
   }
 
   // Create the collection dropdown
-  const collection_dropdown = $('#collection_dropdown')
   const collection_options = Object.keys(collections).map(c => {
+    collections[collection][0].book_id
     let selected = ''
     if (c === collection) selected = ' selected'
-    return `<option value="collection-${c.replace(/ +/g, '-')}"${selected}>${c}</option>`
+    return `<option value="${collections[c][0].book_id}"${selected}>${c}</option>`
   })
-  collection_dropdown.find('select').append(collection_options)
+  $('#collection_select').append(collection_options)
+
+  $('#collection_select').on('change', function() {
+    window.location = this.value
+  });
 
   // 
   const otherBooks = collections[collection].filter(accordion => {
