@@ -344,37 +344,6 @@ $(function() {
     });
   });
 
-  // Enable Sense widget
-  init_sense_widgets();
-  init_console_widgets();
-  init_kibana_widgets();
-  $("div.ess_widget").each(function() {
-    const div         = $(this),
-          snippet     = div.attr('data-snippet'),
-          consoleText = div.prev().text() + '\n';
-
-    return mount(div, ConsoleWidget, {
-      setting: "ess",
-      url_label: 'Enter the endpoint URL of the Elasticsearch Service',
-      configure_text: 'Configure the Elasticsearch Service endpoint URL',
-      consoleText,
-      snippet
-    });
-  });
-  $("div.ece_widget").each(function() {
-    const div         = $(this),
-          snippet     = div.attr('data-snippet'),
-          consoleText = div.prev().text() + '\n';
-
-    return mount(div, ConsoleWidget, {
-      setting: "ece",
-      url_label: 'Enter the endpoint URL of Elastic Cloud Enterprise',
-      configure_text: 'Configure the Elastic Cloud Enterprise endpoint URL',
-      consoleText,
-      snippet
-    });
-  });
-
   if (homeLink === window.location.href) {
     $('div.euiFlexGroup.euiFlexGroup-responsive-xl-flexStart-stretch-row').removeClass('euiFlexGroup-responsive-xl-flexStart-stretch-row')
   }
@@ -388,6 +357,9 @@ $(function() {
       left_col.append(data);
       init_toc(LangStrings);
       utils.open_current(location.pathname);
+      const html = $.parseHTML(data)
+      const version_dropdown = $(html).find('#other_versions').find('select:first-of-type')
+      sticky_content.prepend(version_dropdown)
     }).always(function() {
       init_headers(sticky_content, LangStrings);
       highlight_otp();
@@ -436,6 +408,37 @@ $(function() {
   }).join('\n')
 
   $('#all_books').append(otherBooks)
+
+  // Enable Sense widget
+  init_sense_widgets();
+  init_console_widgets();
+  init_kibana_widgets();
+  $("div.ess_widget").each(function() {
+    const div         = $(this),
+          snippet     = div.attr('data-snippet'),
+          consoleText = div.prev().text() + '\n';
+
+    return mount(div, ConsoleWidget, {
+      setting: "ess",
+      url_label: 'Enter the endpoint URL of the Elasticsearch Service',
+      configure_text: 'Configure the Elasticsearch Service endpoint URL',
+      consoleText,
+      snippet
+    });
+  });
+  $("div.ece_widget").each(function() {
+    const div         = $(this),
+          snippet     = div.attr('data-snippet'),
+          consoleText = div.prev().text() + '\n';
+
+    return mount(div, ConsoleWidget, {
+      setting: "ece",
+      url_label: 'Enter the endpoint URL of Elastic Cloud Enterprise',
+      configure_text: 'Configure the Elastic Cloud Enterprise endpoint URL',
+      consoleText,
+      snippet
+    });
+  });
 
   PR.prettyPrint();
 
