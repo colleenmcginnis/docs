@@ -98,7 +98,7 @@
                   <div class="euiFlexItem euiFlexItem-growZero">
                     <nav class="euiHeaderLinks" aria-label="App menu">
                       <div class="euiHeaderLinks__list euiHeaderLinks__list--gutterS">
-                        <a class="euiButtonEmpty headerRightSideLink empty-text" href="/guide/en/welcome-to-elastic/current/new.html" rel="noreferrer">
+                        <a class="euiButtonEmpty headerRightSideLink empty-text" href="/guide/en/starting-with-the-elasticsearch-platform-and-its-solutions/current/new.html" rel="noreferrer">
                           <span class="euiButtonContent euiButtonEmpty__content"><span class="euiButtonEmpty__text">
                             Release docs
                           </span></span>
@@ -201,8 +201,7 @@
 <script>
   let fetched = []
   function getOtherToc (book_id, id, version) {
-    if (book_id !== 'en/apm/agent') {
-      $.get(`https://www.elastic.co/guide/${book_id}/${version}/toc.html`, {}, function(data) {
+      $.get('https://www.elastic.co/guide/' + book_id + '/' + version + '/toc.html', {}, function(data) {
       if (!fetched.includes(book_id)) {
         $(`#children-${id}`).append(data);
         $('div.toc li ul').each(function() {
@@ -219,7 +218,6 @@
       }
       fetched.push(book_id)
     });
-    }
     
     $(`#children-${id}`).toggle('.show');
     $(`#expand-${id} div:first-child`).toggleClass('open');
