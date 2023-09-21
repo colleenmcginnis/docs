@@ -1,12 +1,12 @@
-:version:                8.10.0
+:version:                8.10.2
 ////
 bare_version never includes -alpha or -beta
 ////
-:bare_version:           8.10.0
-:logstash_version:       8.10.0
-:elasticsearch_version:  8.10.0
-:kibana_version:         8.10.0
-:apm_server_version:     8.10.0
+:bare_version:           8.10.2
+:logstash_version:       8.10.2
+:elasticsearch_version:  8.10.2
+:kibana_version:         8.10.2
+:apm_server_version:     8.10.2
 :branch:                 8.10
 :minor-version:          8.10
 :major-version:          8.x
@@ -23,12 +23,12 @@ Keep the :esf_version: attribute value as master.
 //////////
 release-state can be: released | prerelease | unreleased
 //////////
-:release-state:          unreleased
+:release-state:         released
 
 //////////
 is-current-version can be: true | false
 //////////
-:is-current-version:    false
+:is-current-version:    true
 
 //////////
 hide-xpack-tags defaults to "false" (they are shown unless set to "true")
@@ -43,7 +43,7 @@ APM Agent versions
 :apm-ios-branch:        0.x
 :apm-java-branch:       1.x
 :apm-rum-branch:        5.x
-:apm-node-branch:       3.x
+:apm-node-branch:       4.x
 :apm-php-branch:        1.x
 :apm-py-branch:         6.x
 :apm-ruby-branch:       4.x
