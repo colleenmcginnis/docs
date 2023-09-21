@@ -201,7 +201,7 @@
 <script>
   let fetched = []
   function getOtherToc (book_id, id, version) {
-      $.get('https://www.elastic.co/guide/' + book_id + '/' + version + '/toc.html', {}, function(data) {
+      $.get('https://www.elastic.co' + '/guide/' + book_id + '/' + version + '/toc.html', {}, function(data) {
       if (!fetched.includes(book_id)) {
         $(`#children-${id}`).append(data);
         $('div.toc li ul').each(function() {
