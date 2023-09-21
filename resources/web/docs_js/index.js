@@ -124,7 +124,7 @@ function init_kibana_widgets() {
 function init_toc(lang_strings) {
   const titleElement = $('link[rel="home"]')[0]
   const titleLink = titleElement.href
-  const titleText = titleElement.title
+  const titleText = titleElement.title.replace(/ *\[[^\]]+\]$/m, '')
   var title = $('#current_book_title');
   $('div.toc').attr('id', 'current-toc');
   $(title).append( `<a class=\"euiLink euiLink-text\" href=\"${titleLink}\" rel=\"noreferrer\"><strong>${titleText}</strong></a>`);
@@ -413,8 +413,9 @@ $(function() {
   })
   $('#collection_select').append(collection_options)
 
+  // To do: figure out how to check current
   $('#collection_select').on('change', function() {
-    window.location = this.value
+    window.location = `/guide/${this.value}/${product_version === '8.10' ? 'current' : product_version}/index.html`
   });
 
   // 

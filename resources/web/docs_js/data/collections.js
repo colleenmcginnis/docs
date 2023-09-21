@@ -24,6 +24,7 @@ export default {
     },
     {
       title: "Enterprise Search Clients",
+      book_id: "en/enterprise-search-clients",
       items: [
         {
           title: "App Search JavaScript client",
@@ -197,6 +198,7 @@ export default {
     },
     {
       title: "Elasticsearch Clients",
+      book_id: "en/elasticsearch/client",
       items: [
         {
           title: "Java Client",
@@ -350,6 +352,7 @@ export default {
     },
     {
       title: "Beats Platform Reference",
+      book_id: "en/beats",
       items: [
         {
           title: "Beats Platform Reference",
@@ -481,6 +484,7 @@ export default {
     },
     {
       title: "简体中文",
+      book_id: "cn",
       items: [
         {
           title: "《Elasticsearch 权威指南》中文版",
@@ -498,6 +502,7 @@ export default {
     },
     {
       title: "日本語",
+      book_id: "jp",
       items: [
         {
           title: "Elasticsearchリファレンス",
@@ -519,6 +524,7 @@ export default {
     },
     {
       title: "한국어",
+      book_id: "kr",
       items: [
         {
           title: "Elasticsearch 참조",
