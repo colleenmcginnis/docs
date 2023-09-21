@@ -13,7 +13,7 @@ import "./prettify/lang-console";
 import "../lib/prettify/lang-esql";
 import "../lib/prettify/lang-sql";
 import "../lib/prettify/lang-yaml";
-import items from "../temp/config.js"
+import collections from "./data/collections.js"
 
 // Add support for <details> in IE and the like
 import "../../../../../node_modules/details-polyfill";
@@ -122,8 +122,12 @@ function init_kibana_widgets() {
 }
 
 function init_toc(lang_strings) {
-  var title = $('#book_title');
+  const titleElement = $('link[rel="home"]')[0]
+  const titleLink = titleElement.href
+  const titleText = titleElement.title
+  var title = $('#current_book_title');
   $('div.toc').attr('id', 'current-toc');
+  $(title).append( `<a class=\"euiLink euiLink-text\" href=\"${titleLink}\" rel=\"noreferrer\"><strong>${titleText}</strong></a>`);
 
   // Make li elements in toc collapsible
   $('div.toc li ul').each(function() {
@@ -140,19 +144,6 @@ function init_toc(lang_strings) {
       }
     });
   });
-
-  // Make book title in toc collapsible
-  if ($('.collapsible').length > 0) {
-    title.addClass('collapsible').click(function() {
-      if (title.hasClass('show')) {
-        title.removeClass('show');
-        title.parent().find('.show').removeClass('show');
-      } else {
-        title.addClass('show');
-        title.parent().find('.collapsible').addClass('show');
-      }
-    });
-  }
 
   // Clicking links or the version selector shouldn't fold/expand
   $('div.toc a, #book_title select').click(function(e) {
@@ -248,6 +239,17 @@ function getEuid() {
 // Main function, runs on DOM ready
 $(function() {
 
+  const home = $('link[rel="home"]')[0]
+  const homeLink = home.href
+
+  const meta_collection = $('meta[name="DC.collection"]')
+  const meta_book_id = $('meta[name="DC.book_id"]')
+  const meta_product_version = $('meta[name="product_version"]')
+
+  const collection = meta_collection && meta_collection[0].content
+  const book_id = meta_book_id && meta_book_id[0].content || 'en/observability'
+  const product_version = meta_product_version && meta_product_version[0].content || 'master'
+
   var lang = $('section#guide[lang]').attr('lang') || 'en';
 
   const default_kibana_url  = 'http://localhost:5601',
@@ -303,48 +305,6 @@ $(function() {
   mount($('body'), Modal);
 
   AlternativeSwitcher(store());
-
-  // If breadcrumbs contain a dropdown (e.g. APM, ECS Logging)
-  // handle interaction with the dropdown
-  if ($('#related-products')) {
-    // Select-type element used to reveal options
-    const dropDownAnchor = $('#related-products > .dropdown-anchor')
-    // Popover-type element containing options
-    const dropDownContent = $('#related-products > .dropdown-content')
-    // Toggle the visibility of the popover on click
-    dropDownAnchor.click(function (e) {
-      e.preventDefault();
-      dropDownContent.toggleClass('show')
-    });
-    // Toggle the visibility of the popover on enter
-    dropDownAnchor.keypress(function (e) {
-      if (e.which == 13) {
-        dropDownContent.toggleClass('show')
-      }
-    });
-    // Close the popover when clicking outside it
-    $(document).mouseup(function(e) {
-      if (
-        dropDownContent.hasClass("show")
-        && !dropDownAnchor.is(e.target)
-        && !dropDownContent.is(e.target)
-        && dropDownContent.has(e.target).length === 0
-      ) {
-        dropDownContent.removeClass("show")
-      }
-    })
-    // Bold the item in the popover that represents
-    // the current book 
-    const currentBookTitle = dropDownAnchor.text() 
-    const items = dropDownContent.find("li")
-    items.each(function(i) {
-      if (items[i].innerText === currentBookTitle) {
-        const link = items[i].children[0]
-        link.style.fontWeight = 700
-      }
-    })
-  }
-
   
   const allHeadings = $('#content').find('h1, h2, h3, h4, h5, h6')
   let allLevels = []
@@ -415,10 +375,14 @@ $(function() {
     });
   });
 
+  if (homeLink === window.location.href) {
+    $('div.euiFlexGroup.euiFlexGroup-responsive-xl-flexStart-stretch-row').removeClass('euiFlexGroup-responsive-xl-flexStart-stretch-row')
+  }
+
   var div = $('div.toc');
 
   // Fetch toc.html unless there is already a .toc on the page
-  if (div.length == 0 && $('#guide').find('div.article,div.book').length == 0) {
+  if (div.length == 0) {
     var url = location.href.replace(/[^\/]+$/, 'toc.html');
     var toc = $.get(url, {}, function(data) {
       left_col.append(data);
@@ -431,7 +395,6 @@ $(function() {
   } else {
     init_toc(LangStrings);
     // Style book landing page (no main content, just a TOC and demand gen content)
-
     // Set the width of the left column to zero
     left_col.removeClass().addClass('col-0');
     bottom_left_col.removeClass().addClass('col-0');
@@ -441,25 +404,33 @@ $(function() {
     right_col.removeClass().addClass('col-12 col-lg-3 sticky-top-md h-almost-full-lg');
   }
 
-  const sections = items.map(item => {
-    let isActive = item.label === "Observability"
-    let subItems = item.items
-    if (subItems) {
-      subItems = item.items.map(subItem => {
-        isActive = subItem.label === "Observability"
-        return (
-          isActive
-          ? `<li><span id="active-book">${subItem.label}</span></li>`
-          : `<li><a href="${subItem.link}">${subItem.label}</a></li>`
-        )
-      })
-    }
-    return (
-      subItems
-      ? `<li>${item.label}<ul>${subItems.join('')}</ul></li>`
-      : `<li><a href="${item.link}">${item.label}</a></li>`
-    )
+  // Create the collection dropdown
+  const collection_dropdown = $('#collection_dropdown')
+  const collection_options = Object.keys(collections).map(c => {
+    let selected = ''
+    if (c === collection) selected = ' selected'
+    return `<option value="collection-${c.replace(/ +/g, '-')}"${selected}>${c}</option>`
   })
+  collection_dropdown.find('select').append(collection_options)
+
+  // 
+  const otherBooks = collections[collection].filter(accordion => {
+    return accordion.book_id !== book_id
+  }).map(accordion => {
+    const { title, book_id } = accordion
+    const id = book_id.replace(/\//g, '-')
+    let groupedBooks = ''
+    if (accordion.items) {
+      const items = accordion.items.map(item => {
+        return `<li class="collapsible"><span class="chapter><a href="https://www.elastic.co/guide/${item.book_id}/${product_version}/index.html">${item.title}</a></span></li>`
+      }).join('')
+      groupedBooks = `<div class="toc"><ul class="toc">${items}</ul></div>`
+    }
+    return `<div class="docChrome__sideNav__accordion"><div class="euiAccordion__triggerWrapper"><button onclick="getOtherToc('${book_id}', '${id}', '${product_version}')" id="expand-${id}" tabindex="-1" class="euiButtonIcon euiButtonIcon--xSmall euiAccordion__iconButton euiButtonIcon-empty-text-hoverStyles-euiAccordion__iconButton" type="button"><div class="euiIcon-arrowRight"></div></button><button class="euiAccordion__button css-qdnzvd-euiAccordion__button" type="button"><span class="euiAccordion__buttonContent docChrome__sideNav__accordionButton"><div class="euiText euiText-s"><a class="euiLink euiLink-text" href="https://www.elastic.co/guide/${book_id}/${product_version}/index.html" rel="noreferrer"><strong>${title}</strong></a></div></span></button></div></div>
+    <div class="euiAccordion__childWrapper euiAccordion__childWrapper-isOpen" tabindex="-1" role="region"><div class=" euiAccordion__children"><div id="children-${id}" class="docChrome__sideNav__list collapse">${groupedBooks}</div></div></div>`
+  }).join('\n')
+
+  $('#all_books').append(otherBooks)
 
   PR.prettyPrint();
 

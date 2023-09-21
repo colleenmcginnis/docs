@@ -139,9 +139,12 @@ sub build_chunked {
 
     # Extract the TOC from the index.html page *before* we (potentially) replace
     # the TOC on the index.html page with a custom title page.
-    extract_toc_from_index( $raw_dest );
+    extract_toc_from_index( $raw_dest, %$Opts );
+    
+    my $contents = $raw_dest->file('index.html')->slurp( iomode => '<:encoding(UTF-8)' );
+    $contents =~ s|<!--START_TOC-->.*<!--END_TOC-->|<div></div>|sm;
+    $raw_dest->file('index.html')->spew( iomode => '>:utf8', $contents );
 
-    _customize_title_page( $index, $raw_dest->file('index.html'), $single );
     finish_build( $index->parent, $raw_dest, $dest, $lang, 0 );
 }
 

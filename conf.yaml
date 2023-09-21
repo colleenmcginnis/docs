@@ -133,7 +133,7 @@ contents:
             chunk:      1
             tags:       Elastic/Welcome
             subject:    Welcome to Elastic
-            collection: Getting started
+            collection: Get started
             book_id:    en/welcome-to-elastic
             sources:
               -
@@ -1624,7 +1624,7 @@ contents:
                     chunk:      1
                     tags:       APM Server/Reference
                     subject:    APM
-                    collection: Legacy Documentation
+                    collection: Legacy documentation
                     book_id:    en/apm/get-started
                     sources:
                       -
@@ -1641,7 +1641,7 @@ contents:
                     chunk:      1
                     tags:       APM Server/Reference
                     subject:    APM
-                    collection: Legacy Documentation
+                    collection: Legacy documentation
                     book_id:    en/apm/server
                     sources:
                       -
@@ -2592,7 +2592,7 @@ contents:
             noindex:    1
             tags:       Elastic Stack/Getting started
             subject:    Elastic Stack
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/elastic-stack-get-started
             sources:
               -
@@ -2619,7 +2619,7 @@ contents:
             chunk:      1
             tags:       Elastic Stack/Google
             subject:    Elastic Stack
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/elastic-stack-gke
             sources:
               -
@@ -2640,7 +2640,7 @@ contents:
             tags:       Journalbeat/Reference
             respect_edit_url_overrides: true
             subject:    Journalbeat
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/beats/journalbeat
             sources:
               -
@@ -2682,7 +2682,7 @@ contents:
             private:    1
             tags:       Logs/Guide
             subject:    Logs
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/logs/guide
             sources:
               -
@@ -2703,7 +2703,7 @@ contents:
             private:    1
             tags:       Metrics/Guide
             subject:    Metrics
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/metrics/guide
             sources:
               -
@@ -2724,7 +2724,7 @@ contents:
             private:    1
             tags:       Uptime/Guide
             subject:    Uptime
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/uptime
             sources:
               -
@@ -2745,7 +2745,7 @@ contents:
             private:    1
             tags:       Infrastructure/Guide
             subject:    Infrastructure
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/infrastructure/guide
             sources:
               -
@@ -2766,7 +2766,7 @@ contents:
             noindex:    1
             tags:       Legacy/Elastic Stack/Overview
             subject:    Elastic Stack
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/elastic-stack-overview
             sources:
               -
@@ -2789,7 +2789,7 @@ contents:
             tags:       Legacy/XPack/Reference
             current:    6.2
             subject:    X-Pack
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/x-pack
             index:      docs/en/index.asciidoc
             branches:   [ 6.2, 6.1, 6.0, 5.6, 5.5, 5.4, 5.3, 5.2, 5.1, 5.0 ]
@@ -2821,7 +2821,7 @@ contents:
             private:    1
             tags:       Legacy/Elasticsearch/Definitive Guide
             subject:    Elasticsearch
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/elasticsearch/guide
             suppress_migration_warnings: true
             sources:
@@ -2841,7 +2841,7 @@ contents:
             private:    1
             tags:       Legacy/Elasticsearch/Sense-Editor
             subject:    Sense
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/sense
             sources:
               -
@@ -2854,7 +2854,7 @@ contents:
             noindex:    1
             tags:       Legacy/Marvel/Reference
             subject:    Marvel
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/marvel
             current:    2.4
             index:      docs/public/marvel/index.asciidoc
@@ -2874,7 +2874,7 @@ contents:
             noindex:    1
             tags:       Legacy/Shield/Reference
             subject:    Shield
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/shield
             current:    2.4
             index:      docs/public/shield/index.asciidoc
@@ -2894,7 +2894,7 @@ contents:
             noindex:    1
             tags:       Legacy/Watcher/Reference
             subject:    Watcher
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/watcher
             current:    2.4
             index:      docs/public/watcher/index.asciidoc
@@ -2913,7 +2913,7 @@ contents:
             noindex:    1
             tags:       Legacy/Reporting/Reference
             subject:    Reporting
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/reporting
             current:    2.4
             index:      docs/public/reporting/index.asciidoc
@@ -2930,7 +2930,7 @@ contents:
             noindex:    1
             tags:       Legacy/Graph/Reference
             subject:    Graph
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/graph
             current:    2.4
             index:      docs/public/graph/index.asciidoc
@@ -2951,7 +2951,7 @@ contents:
             noindex:    1
             tags:       Legacy/Clients/Groovy
             subject:    Clients
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/elasticsearch/client/groovy-api
             sources:
               -
@@ -2971,7 +2971,7 @@ contents:
             tags:       Legacy/Topbeat/Reference
             respect_edit_url_overrides: true
             subject:    Topbeat
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/beats/topbeat
             sources:
               -
@@ -2993,7 +2993,7 @@ contents:
             noindex:    1
             tags:       Legacy/Clients/Elasticsearch-js
             subject:    Clients
-            collection: Legacy Documentation
+            collection: Legacy documentation
             book_id:    en/elasticsearch/client/elasticsearch-js
             sources:
               -
@@ -3015,7 +3015,7 @@ contents:
                 lang:       zh_cn
                 tags:       Elasticsearch/Definitive Guide
                 subject:    Elasticsearch
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    cn/elasticsearch/guide
                 suppress_migration_warnings: true
                 sources:
@@ -3031,7 +3031,7 @@ contents:
                 lang:       zh_cn
                 tags:       Elasticsearch/PHP
                 subject:    Elasticsearch
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    cn/elasticsearch/php
                 sources:
                   -
@@ -3048,7 +3048,7 @@ contents:
                 private:    1
                 tags:       Kibana/Reference
                 subject:    Kibana
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    cn/kibana
                 sources:
                   -
@@ -3069,7 +3069,7 @@ contents:
                 lang:       ja
                 tags:       Elasticsearch/Reference
                 subject:    Elasticsearch
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    jp/elasticsearch/reference
                 sources:
                   -
@@ -3089,7 +3089,7 @@ contents:
                 lang:       ja
                 tags:       Logstash/Reference
                 subject:    Logstash
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    jp/logstash
                 sources:
                   -
@@ -3106,7 +3106,7 @@ contents:
                 lang:       ja
                 tags:       Kibana/Reference
                 subject:    Kibana
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    jp/kibana
                 sources:
                   -
@@ -3123,7 +3123,7 @@ contents:
                 lang:       ja
                 tags:       X-Pack/Reference
                 subject:    X-Pack
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    jp/x-pack
                 sources:
                   -
@@ -3152,7 +3152,7 @@ contents:
                 lang:       ko
                 tags:       Elasticsearch/Reference
                 subject:    Elasticsearch
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    kr/elasticsearch/reference
                 sources:
                   -
@@ -3172,7 +3172,7 @@ contents:
                 lang:       ko
                 tags:       Logstash/Reference
                 subject:    Logstash
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    kr/logstash
                 sources:
                   -
@@ -3189,7 +3189,7 @@ contents:
                 lang:       ko
                 tags:       Kibana/Reference
                 subject:    Kibana
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    kr/kibana
                 sources:
                   -
@@ -3206,7 +3206,7 @@ contents:
                 lang:       ko
                 tags:       X-Pack/Reference
                 subject:    X-Pack
-                collection: Legacy Documentation
+                collection: Legacy documentation
                 book_id:    kr/x-pack
                 sources:
                   -

@@ -98,17 +98,17 @@
                   <div class="euiFlexItem euiFlexItem-growZero">
                     <nav class="euiHeaderLinks" aria-label="App menu">
                       <div class="euiHeaderLinks__list euiHeaderLinks__list--gutterS">
-                        <a class="euiButtonEmpty headerRightSideLink empty-text" href="https://www.elastic.co/guide/en/welcome-to-elastic/current/new.html" rel="noreferrer">
+                        <a class="euiButtonEmpty headerRightSideLink empty-text" href="/guide/en/welcome-to-elastic/current/new.html" rel="noreferrer">
                           <span class="euiButtonContent euiButtonEmpty__content"><span class="euiButtonEmpty__text">
                             Release docs
                           </span></span>
                         </a>
-                        <a class="euiButtonEmpty headerRightSideLink empty-text" href="https://www.elastic.co/guide/en/elastic-stack-glossary/current/terms.html" rel="noreferrer">
+                        <a class="euiButtonEmpty headerRightSideLink empty-text" href="/guide/en/elastic-stack-glossary/current/terms.html" rel="noreferrer">
                           <span class="euiButtonContent euiButtonEmpty__content"><span class="euiButtonEmpty__text">
                             Glossary
                           </span></span>
                         </a>
-                        <a class="euiButtonEmpty headerRightSideLink empty-text" href="https://www.elastic.co/support/" rel="noreferrer">
+                        <a class="euiButtonEmpty headerRightSideLink empty-text" href="/support/" rel="noreferrer">
                           <span class="euiButtonContent euiButtonEmpty__content"><span class="euiButtonEmpty__text">
                             Support
                           </span></span>
@@ -127,9 +127,35 @@
         <section id="guide" <!-- DOCS LANG -->>
           <div style="min-block-size: max(460px, 100vh); padding-block-start: 0px;" class="euiPageTemplate docPageContent euiPageOuter-row-grow">
             <!-- Left side bar -->
-            <div class="docChrome__sidebar euiPageSidebar-sticky-m" style="min-inline-size: 270px; inset-block-start: 0px; max-block-size: calc(100vh - 0px);">
-              <div id="left_col">
-                  <!-- The TOC is appended here -->
+            <div id="all_books" class="docChrome__sidebar euiPageSidebar-sticky-m" style="min-inline-size: 270px; inset-block-start: 0px; max-block-size: calc(100vh - 0px);">
+              <div id="collection_dropdown" class="euiFormControlLayout">
+                <div class="euiFormControlLayout__childrenWrapper">
+                  <select class="euiSelect euiFormControlLayout--1icons"></select>
+                  <div class="euiFormControlLayoutIcons euiFormControlLayoutIcons--right euiFormControlLayoutIcons--absolute">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="40" viewBox="0 0 16 16" class="euiIcon euiFormControlLayoutCustomIcon__icon euiIcon-m-isLoaded" role="img" data-icon-type="arrowDown" data-is-loaded="true" aria-hidden="true"><path fill-rule="evenodd" d="M1.957 4.982a.75.75 0 0 1 1.06-.025l4.81 4.591a.25.25 0 0 0 .346 0l4.81-4.59a.75.75 0 0 1 1.035 1.085l-4.81 4.59a1.75 1.75 0 0 1-2.416 0l-4.81-4.59a.75.75 0 0 1-.025-1.06Z" clip-rule="evenodd"></path></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="docChrome__sideNav__accordion">
+                <div class="euiAccordion__triggerWrapper">
+                  <button tabindex="-1" class="euiButtonIcon euiButtonIcon--xSmall euiAccordion__iconButton euiButtonIcon-empty-text-hoverStyles-euiAccordion__iconButton" type="button" aria-controls="nav-set-accordion-0" aria-expanded="false" aria-labelledby="ie5643a11-4c11-11ee-8ae5-67ae988fb5a7">
+                    <div class="euiIcon-arrowRight open"></div>
+                  </button>
+                  <button id="ie5643a11-4c11-11ee-8ae5-67ae988fb5a7" class="euiAccordion__button css-qdnzvd-euiAccordion__button" aria-controls="nav-set-accordion-0" aria-expanded="false" type="button">
+                    <span class="euiAccordion__buttonContent docChrome__sideNav__accordionButton">
+                      <div id="current_book_title" class="euiText euiText-s">
+                        <!-- The book title link goes here -->
+                      </div>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div class="euiAccordion__childWrapper euiAccordion__childWrapper-isOpen" tabindex="-1" role="region" aria-labelledby="ie5643a11-4c11-11ee-8ae5-67ae988fb5a7" id="nav-set-accordion-0" style="block-size: 5334px;">
+                <div class=" euiAccordion__children">
+                  <div class="docChrome__sideNav__list" id="left_col">
+                      <!-- The TOC is appended here -->
+                  </div>
+                </div>
               </div>
             </div>
             <!-- Middle -->
@@ -144,7 +170,7 @@
                         <!-- end body -->
                       </div>
                     </div>
-                    <div class="euiFlexItem euiFlexItem-grow-1">
+                    <div id="otp-container" class="euiFlexItem euiFlexItem-grow-1">
                       <div class="docArticle__tocContainer euiPageSidebar-sticky" style="min-inline-size: 248px; inset-block-start: 0px; max-block-size: calc(100vh - 0px);">
                         <!-- Right side bar -->
                         <div id="sticky_content" class="sticky-top">
@@ -170,6 +196,34 @@
   <!-- DOCS FINAL -->
 </body>
 
-<script src='https://www.elastic.co/elastic-nav.js'></script>
+<script src="https://www.elastic.co/elastic-nav.js" async=""></script>
+
+<script>
+  let fetched = []
+  function getOtherToc (book_id, id, version) {
+    if (book_id !== 'en/apm/agent') {
+      $.get(`https://www.elastic.co/guide/${book_id}/${version}/toc.html`, {}, function(data) {
+      if (!fetched.includes(book_id)) {
+        $(`#children-${id}`).append(data);
+        $('div.toc li ul').each(function() {
+          var li = $(this).parent();
+          li.addClass('collapsible').children('span').click(function() {
+            if (li.hasClass('show')) {
+              li.add(li.find('li.show')).removeClass('show');
+            } else {
+              li.parents('div.toc,li').first().find('li.show').removeClass('show');
+              li.addClass('show');
+            }
+          });
+        });
+      }
+      fetched.push(book_id)
+    });
+    }
+    
+    $(`#children-${id}`).toggle('.show');
+    $(`#expand-${id} div:first-child`).toggleClass('open');
+  }
+</script>
 
 </html>
