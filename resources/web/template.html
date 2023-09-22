@@ -75,7 +75,9 @@
   <div class="docWrapper">
     <header data-elastic-exclude="true">
       <div class="header" id="docsHeader" style="height:146px">
-        <div id="elastic-nav" class="docsElasticNav"></div>
+        <div style="min-height:72px">
+          <div id="elastic-nav" class="docsElasticNav" style="min-height:72px"></div>
+        </div>
         <header class="euiPageHeader docChrome_headerPageHeader euiPageHeader-m">
           <div class="euiPageHeaderContent euiPageHeaderContent-m" style="max-width:1240px">
             <div class="euiFlexGroup euiPageHeaderContent__top euiFlexGroup-l-flexStart-stretch-row">
@@ -173,49 +175,45 @@
         </section>
     </div>
     <div id='elastic-footer'></div>
-    <script src='https://www.elastic.co/elastic-footer.js'></script>
     <!-- Footer Section end-->
   </div>
-
   <script src="/guide/static/jquery.js"></script>
   <script type="text/javascript" src="/guide/static/docs.js"></script>
+  <script src="https://www.elastic.co/elastic-nav.js" async=""></script>
+  <script src='https://www.elastic.co/elastic-footer.js'></script>
+  <script>
+    let fetched = []
+    function getOtherToc (book_id, id, version) {
+        $.get('https://www.elastic.co' + '/guide/' + book_id + '/' + version + '/toc.html', {}, function(data) {
+        if (!fetched.includes(book_id)) {
+          $(`#children-${id}`).append(data);
+          $(`#children-${id}`).find('a').each(function() {
+            this.href = `/guide/${book_id}/${version}/${$(this).attr('href')}`
+          })
+          $('div.toc li ul').each(function(thing) {
+            const li = $(this).parent();
+            li.addClass('collapsible').children('span').click(function() {
+              if (li.hasClass('show')) {
+                li.add(li.find('li.show')).removeClass('show');
+              } else {
+                li.parents('div.toc,li').first().find('li.show').removeClass('show');
+                li.addClass('show');
+              }
+            });
+          });
+        }
+        fetched.push(book_id)
+      });
+      
+      $(`#children-${id}`).toggle('.show');
+      $(`#expand-${id} div:first-child`).toggleClass('open');
+    }
+    function collapseToc (id) {
+      console.log(id)
+      $(`#expand-${id} div:first-child`).toggleClass('open');
+      $(`#children-${id}`).toggle('.collapse');
+    }
+  </script>
   <!-- DOCS FINAL -->
 </body>
-
-<script src="https://www.elastic.co/elastic-nav.js" async=""></script>
-
-<script>
-  let fetched = []
-  function getOtherToc (book_id, id, version) {
-      $.get('https://www.elastic.co' + '/guide/' + book_id + '/' + version + '/toc.html', {}, function(data) {
-      if (!fetched.includes(book_id)) {
-        $(`#children-${id}`).append(data);
-        $(`#children-${id}`).find('a').each(function() {
-          this.href = `/guide/${book_id}/${version}/${$(this).attr('href')}`
-        })
-        $('div.toc li ul').each(function(thing) {
-          const li = $(this).parent();
-          li.addClass('collapsible').children('span').click(function() {
-            if (li.hasClass('show')) {
-              li.add(li.find('li.show')).removeClass('show');
-            } else {
-              li.parents('div.toc,li').first().find('li.show').removeClass('show');
-              li.addClass('show');
-            }
-          });
-        });
-      }
-      fetched.push(book_id)
-    });
-    
-    $(`#children-${id}`).toggle('.show');
-    $(`#expand-${id} div:first-child`).toggleClass('open');
-  }
-  function collapseToc (id) {
-    console.log(id)
-    $(`#expand-${id} div:first-child`).toggleClass('open');
-    $(`#children-${id}`).toggle('.collapse');
-  }
-</script>
-
 </html>

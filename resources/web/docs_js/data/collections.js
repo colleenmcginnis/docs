@@ -5,6 +5,12 @@ export default {
       book_id: "en/starting-with-the-elasticsearch-platform-and-its-solutions"
     },
   ],
+  "Glossary": [
+    {
+      title: "Glossary",
+      book_id: "en/elastic-stack-glossary"
+    },
+  ],
   "Enterprise Search": [
     {
       title: "Enterprise Search Guide",
@@ -299,10 +305,6 @@ export default {
     {
       title: "Installation and Upgrade Guide",
       book_id: "en/elastic-stack"
-    },
-    {
-      title: "Glossary",
-      book_id: "en/elastic-stack-glossary"
     },
     {
       title: "Machine Learning",

@@ -134,7 +134,7 @@ contents:
             tags:       Elastic/Starting with the Elasticsearch Platform and its Solutions
             subject:    Starting with the Elasticsearch Platform and its Solutions
             collection: Get started
-            book_id:    en/welcome-to-elastic
+            book_id:    en/starting-with-the-elasticsearch-platform-and-its-solutions
             sources:
               -
                 repo:   tech-content
@@ -211,7 +211,7 @@ contents:
             branches:   [ {main: master} ]
             tags:       Elastic Stack/Glossary
             subject:    Elastic Stack
-            collection: Elastic Stack
+            collection: Glossary
             book_id:    en/elastic-stack-glossary
             sources:
               -
