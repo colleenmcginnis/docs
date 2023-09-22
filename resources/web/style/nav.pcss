@@ -8,6 +8,56 @@
  *  - Previous and next page
  */
 
+ .euiSelect {
+  max-width: 400px;
+  width: 100%;
+  height: 40px;
+  background-color: #fbfcfd;
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  box-shadow: 0 0 transparent, inset 0 0 0 1px rgba(17,42,134,.1);
+  transition: box-shadow .15s ease-in,background-image .15s ease-in,background-size .15s ease-in,background-color .15s ease-in;
+  font-family: Inter UI,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 400;
+  letter-spacing: normal;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-kerning: normal;
+  font-kerning: normal;
+  font-size: 14px;
+  color: #343741;
+  border: none;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  line-height: 40px;
+  padding: 0 12px;
+}
+
+.euiFormControlLayout--1icons {
+  padding-right: 34px;
+}
+
+.euiFormControlLayoutIcons {
+  pointer-events: none;
+}
+
+.euiFormControlLayoutIcons--right {
+  left: auto;
+  right: 12px;
+}
+
+.euiFormControlLayoutIcons--absolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.euiFormControlLayoutCustomIcon {
+
+}
+
 /** Left side nav **/
 .docChrome__sidebar {
 
@@ -23,56 +73,6 @@
 
   .euiFormControlLayout__childrenWrapper {
     position: relative;
-  }
-
-  .euiSelect {
-    max-width: 400px;
-    width: 100%;
-    height: 40px;
-    background-color: #fbfcfd;
-    background-repeat: no-repeat;
-    background-size: 0 100%;
-    box-shadow: 0 0 transparent, inset 0 0 0 1px rgba(17,42,134,.1);
-    transition: box-shadow .15s ease-in,background-image .15s ease-in,background-size .15s ease-in,background-color .15s ease-in;
-    font-family: Inter UI,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-    font-weight: 400;
-    letter-spacing: normal;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -webkit-font-kerning: normal;
-    font-kerning: normal;
-    font-size: 14px;
-    color: #343741;
-    border: none;
-    border-radius: 6px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    line-height: 40px;
-    padding: 0 12px;
-  }
-
-  .euiFormControlLayout--1icons {
-    padding-right: 34px;
-  }
-
-  .euiFormControlLayoutIcons {
-    pointer-events: none;
-  }
-  
-  .euiFormControlLayoutIcons--right {
-    left: auto;
-    right: 12px;
-  }
-
-  .euiFormControlLayoutIcons--absolute {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-  }
-
-  .euiFormControlLayoutCustomIcon {
-
   }
 
   .docChrome__sideNav__accordion {
@@ -445,3 +445,24 @@ font-size: 18px !important;
     }
   }
 }
+
+#sticky_content {
+  margin-top: 50px;
+  
+  select {
+    background-color: #e6f1fa;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1.1429rem;
+    box-shadow: none;
+    font-weight: 500;
+  }
+}
+
+#otp {
+  font-size: 1.1429rem;
+  font-weight: 600;
+}
+
+

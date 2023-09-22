@@ -26,7 +26,7 @@ import "../../../../../node_modules/url-search-params-polyfill";
 // OTP = on this page
 export function init_headers(sticky_content, lang_strings) {
   // Add on-this-page block
-  var this_page = $('<div id="this_page"></div>').prependTo(sticky_content);
+  var this_page = $('<div id="this_page"></div>').appendTo(sticky_content);
   this_page.append('<p id="otp" class="aside-heading">' + lang_strings('On this page') + '</p>');
   var ul = $('<ul></ul>').appendTo(this_page);
   var items = 0;
@@ -149,24 +149,6 @@ function init_toc(lang_strings) {
   $('div.toc a, #book_title select').click(function(e) {
     e.stopPropagation();
   });
-
-  // Setup version selector
-  var v_selected = title.find('select option:selected');
-  title
-    .find('select')
-    .change(function(e) {
-      var version = $(e.target).find('option:selected').val();
-      if (version === "other") {
-        $("#other_versions").show();
-        $("#live_versions").hide();
-        return;
-      }
-      utils.get_current_page_in_version(version).fail(function() {
-        v_selected.attr('selected', 'selected');
-        alert(lang_strings('This page is not available in the docs for version:')
-              + version);
-      });
-    });
 }
 
 // In the OTP, highlight the heading of the section that is
@@ -353,13 +335,29 @@ $(function() {
   // Fetch toc.html unless there is already a .toc on the page
   if (div.length == 0) {
     var url = location.href.replace(/[^\/]+$/, 'toc.html');
-    var toc = $.get(url, {}, function(data) {
+    $.get(url, {}, function(data) {
       left_col.append(data);
       init_toc(LangStrings);
       utils.open_current(location.pathname);
+      
+      // Setup version selector
       const html = $.parseHTML(data)
       const version_dropdown = $(html).find('#other_versions').find('select:first-of-type')
+      $(version_dropdown).addClass("euiSelect euiFormControlLayout--1icons")
+      const customIcon = '<div class="euiFormControlLayoutIcons euiFormControlLayoutIcons--right euiFormControlLayoutIcons--absolute"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="40" viewBox="0 0 16 16" class="euiIcon euiFormControlLayoutCustomIcon__icon euiIcon-m-isLoaded" role="img" data-icon-type="arrowDown" data-is-loaded="true" aria-hidden="true"><path fill-rule="evenodd" d="M1.957 4.982a.75.75 0 0 1 1.06-.025l4.81 4.591a.25.25 0 0 0 .346 0l4.81-4.59a.75.75 0 0 1 1.035 1.085l-4.81 4.59a1.75 1.75 0 0 1-2.416 0l-4.81-4.59a.75.75 0 0 1-.025-1.06Z" clip-rule="evenodd"></path></svg></div>'
       sticky_content.prepend(version_dropdown)
+      sticky_content.append(customIcon)
+      // Set up interaction
+      var v_selected = $(version_dropdown).find('option:selected');
+      $(version_dropdown)
+        .change(function(e) {
+          var version = $(e.target).find('option:selected').val();
+          utils.get_current_page_in_version(version).fail(function() {
+            v_selected.attr('selected', 'selected');
+            alert(lang_strings('This page is not available in the docs for version:')
+                  + version);
+          });
+        });
     }).always(function() {
       init_headers(sticky_content, LangStrings);
       highlight_otp();

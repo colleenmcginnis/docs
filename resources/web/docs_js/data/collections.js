@@ -2,7 +2,7 @@ export default {
   "Get started": [
     {
       title: "Welcome to Elastic",
-      book_id: "en/welcome-to-elastic"
+      book_id: "en/starting-with-the-elasticsearch-platform-and-its-solutions"
     },
   ],
   "Enterprise Search": [
