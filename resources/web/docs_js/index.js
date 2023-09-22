@@ -122,13 +122,6 @@ function init_kibana_widgets() {
 }
 
 function init_toc(lang_strings) {
-  const titleElement = $('link[rel="home"]')[0]
-  const titleLink = titleElement.href
-  const titleText = titleElement.title.replace(/ *\[[^\]]+\]$/m, '')
-  var title = $('#current_book_title');
-  $('div.toc').attr('id', 'current-toc');
-  $(title).append( `<a class=\"euiLink euiLink-text\" href=\"${titleLink}\" rel=\"noreferrer\"><strong>${titleText}</strong></a>`);
-
   // Make li elements in toc collapsible
   $('div.toc li ul').each(function() {
     var li = $(this).parent();
@@ -225,11 +218,11 @@ $(function() {
   const homeLink = home.href
 
   const meta_collection = $('meta[name="DC.collection"]')
-  const meta_book_id = $('meta[name="DC.book_id"]')
+  const meta_tag_book_id = $('meta[name="DC.book_id"]')
   const meta_product_version = $('meta[name="product_version"]')
 
   const collection = meta_collection && meta_collection[0].content
-  const book_id = meta_book_id && meta_book_id[0].content || 'en/observability'
+  const meta_book_id = meta_tag_book_id && meta_tag_book_id[0].content || 'en/observability'
   const product_version = meta_product_version && meta_product_version[0].content || 'master'
 
   var lang = $('section#guide[lang]').attr('lang') || 'en';
@@ -330,13 +323,46 @@ $(function() {
     $('div.euiFlexGroup.euiFlexGroup-responsive-xl-flexStart-stretch-row').removeClass('euiFlexGroup-responsive-xl-flexStart-stretch-row')
   }
 
-  var div = $('div.toc');
+  // Create the collection dropdown
+  const collection_options = Object.keys(collections).map(c => {
+    collections[collection][0].book_id
+    let selected = ''
+    if (c === collection) selected = ' selected'
+    return `<option value="${collections[c][0].book_id}"${selected}>${c}</option>`
+  })
+  $('#collection_select').append(collection_options)
+
+  // To do: figure out how to check current
+  $('#collection_select').on('change', function() {
+    window.location = `/guide/${this.value}/${product_version === '8.10' ? 'current' : product_version}/index.html`
+  });
+
+  // 
+  const otherBooks = collections[collection].map(accordion => {
+    const { title, book_id } = accordion
+    const id = book_id.replace(/\//g, '-')
+    let groupedBooks = ''
+    if (accordion.items) {
+      const items = accordion.items.map(item => {
+        return `<li class="collapsible"><span class="chapter><a href="/${item.book_id}/${product_version === '8.10' ? 'current' : product_version}/index.html">${item.title}</a></span></li>`
+      }).join('')
+      groupedBooks = `<div class="toc"><ul class="toc">${items}</ul></div>`
+    }
+    return `<div class="docChrome__sideNav__accordion"><div class="euiAccordion__triggerWrapper"><button ${book_id !== meta_book_id ? `onclick="getOtherToc('${book_id}', '${id}', '${product_version}')"` : `onclick="collapseToc('${id}')"`} id="expand-${id}" tabindex="-1" class="euiButtonIcon euiButtonIcon--xSmall euiAccordion__iconButton euiButtonIcon-empty-text-hoverStyles-euiAccordion__iconButton" type="button"><div class="euiIcon-arrowRight${book_id !== meta_book_id ? '' : ' open'}"></div></button><button class="euiAccordion__button css-qdnzvd-euiAccordion__button" type="button"><span class="euiAccordion__buttonContent docChrome__sideNav__accordionButton"><div class="euiText euiText-s"><a class="euiLink euiLink-text" href="/guide/${book_id}/${product_version}/index.html" rel="noreferrer"><strong>${title}</strong></a></div></span></button></div></div>
+    <div class="euiAccordion__childWrapper euiAccordion__childWrapper-isOpen" tabindex="-1" role="region"><div class=" euiAccordion__children"><div id="children-${id}" class="docChrome__sideNav__list${book_id !== meta_book_id ?' collapse' : ''}">${groupedBooks}</div></div></div>`
+  }).join('\n')
+
+  $('#all_books').append(otherBooks)
+
+  var div = $('#current-toc');
 
   // Fetch toc.html unless there is already a .toc on the page
   if (div.length == 0) {
     var url = location.href.replace(/[^\/]+$/, 'toc.html');
     $.get(url, {}, function(data) {
-      left_col.append(data);
+      const id = meta_book_id.replace(/\//g, '-')
+      $(`#children-${id}`).append(data);
+      $(`#children-${id}`).find('div.toc').attr('id', 'current-toc');
       init_toc(LangStrings);
       utils.open_current(location.pathname);
       
@@ -345,8 +371,10 @@ $(function() {
       const version_dropdown = $(html).find('#other_versions').find('select:first-of-type')
       $(version_dropdown).addClass("euiSelect euiFormControlLayout--1icons")
       const customIcon = '<div class="euiFormControlLayoutIcons euiFormControlLayoutIcons--right euiFormControlLayoutIcons--absolute"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="40" viewBox="0 0 16 16" class="euiIcon euiFormControlLayoutCustomIcon__icon euiIcon-m-isLoaded" role="img" data-icon-type="arrowDown" data-is-loaded="true" aria-hidden="true"><path fill-rule="evenodd" d="M1.957 4.982a.75.75 0 0 1 1.06-.025l4.81 4.591a.25.25 0 0 0 .346 0l4.81-4.59a.75.75 0 0 1 1.035 1.085l-4.81 4.59a1.75 1.75 0 0 1-2.416 0l-4.81-4.59a.75.75 0 0 1-.025-1.06Z" clip-rule="evenodd"></path></svg></div>'
-      sticky_content.prepend(version_dropdown)
-      sticky_content.append(customIcon)
+      if (version_dropdown.length > 0) {
+        sticky_content.prepend(version_dropdown)
+        sticky_content.append(customIcon)
+      }
       // Set up interaction
       var v_selected = $(version_dropdown).find('option:selected');
       $(version_dropdown)
@@ -373,39 +401,6 @@ $(function() {
     // Set the width of the demand gen content to 3
     right_col.removeClass().addClass('col-12 col-lg-3 sticky-top-md h-almost-full-lg');
   }
-
-  // Create the collection dropdown
-  const collection_options = Object.keys(collections).map(c => {
-    collections[collection][0].book_id
-    let selected = ''
-    if (c === collection) selected = ' selected'
-    return `<option value="${collections[c][0].book_id}"${selected}>${c}</option>`
-  })
-  $('#collection_select').append(collection_options)
-
-  // To do: figure out how to check current
-  $('#collection_select').on('change', function() {
-    window.location = `/guide/${this.value}/${product_version === '8.10' ? 'current' : product_version}/index.html`
-  });
-
-  // 
-  const otherBooks = collections[collection].filter(accordion => {
-    return accordion.book_id !== book_id
-  }).map(accordion => {
-    const { title, book_id } = accordion
-    const id = book_id.replace(/\//g, '-')
-    let groupedBooks = ''
-    if (accordion.items) {
-      const items = accordion.items.map(item => {
-        return `<li class="collapsible"><span class="chapter><a href="https://www.elastic.co/guide/${item.book_id}/${product_version}/index.html">${item.title}</a></span></li>`
-      }).join('')
-      groupedBooks = `<div class="toc"><ul class="toc">${items}</ul></div>`
-    }
-    return `<div class="docChrome__sideNav__accordion"><div class="euiAccordion__triggerWrapper"><button onclick="getOtherToc('${book_id}', '${id}', '${product_version}')" id="expand-${id}" tabindex="-1" class="euiButtonIcon euiButtonIcon--xSmall euiAccordion__iconButton euiButtonIcon-empty-text-hoverStyles-euiAccordion__iconButton" type="button"><div class="euiIcon-arrowRight"></div></button><button class="euiAccordion__button css-qdnzvd-euiAccordion__button" type="button"><span class="euiAccordion__buttonContent docChrome__sideNav__accordionButton"><div class="euiText euiText-s"><a class="euiLink euiLink-text" href="https://www.elastic.co/guide/${book_id}/${product_version}/index.html" rel="noreferrer"><strong>${title}</strong></a></div></span></button></div></div>
-    <div class="euiAccordion__childWrapper euiAccordion__childWrapper-isOpen" tabindex="-1" role="region"><div class=" euiAccordion__children"><div id="children-${id}" class="docChrome__sideNav__list collapse">${groupedBooks}</div></div></div>`
-  }).join('\n')
-
-  $('#all_books').append(otherBooks)
 
   // Enable Sense widget
   init_sense_widgets();
