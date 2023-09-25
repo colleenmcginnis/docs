@@ -227,7 +227,7 @@ $(function() {
   const meta_current = meta_tag_current && meta_tag_current[0].content || 'current'
   const meta_product_version = meta_tag_product_version && meta_tag_product_version[0].content || 'master'
   
-  const isCurrent = meta_product_version === meta_current
+  const isCurrent = meta_product_version === meta_current || meta_product_version === 'latest'
   const product_version = isCurrent ? 'current' : meta_product_version
 
   var lang = $('section#guide[lang]').attr('lang') || 'en';
@@ -353,6 +353,7 @@ $(function() {
     <div class="euiAccordion__childWrapper" tabindex="-1" role="region"><div class=" euiAccordion__children"><div id="children-${id}" class="docChrome__sideNav__list${!isActive ? ' collapse' : ''}">${groupedBooks}</div></div></div>`
     
     $('#all_books').append(accordionItem)
+    init_toc(LangStrings)
   })
 
   $(`#expand-${meta_book_id.replace(/\//g, '-')}`).on('click', function(){
