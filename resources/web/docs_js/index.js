@@ -222,10 +222,12 @@ $(function() {
 
   const meta_collection = $('meta[name="DC.collection"]')
   const meta_tag_book_id = $('meta[name="DC.book_id"]')
+  const meta_tag_group = $('meta[name="DC.group"]')
   const meta_tag_product_version = $('meta[name="product_version"]')
 
   const collection = meta_collection && meta_collection[0].content
   const meta_book_id = meta_tag_book_id && meta_tag_book_id[0].content || 'en/observability'
+  const meta_group = meta_tag_group && meta_tag_group[0].content
   const meta_product_version = meta_tag_product_version && meta_tag_product_version[0].content || 'master'
   const product_version = meta_product_version === current_version || meta_product_version === 'latest' ? 'current' : meta_product_version
 
@@ -335,19 +337,28 @@ $(function() {
   })
 
   collections[collection].forEach(accordion => {
-    const { title, book_id } = accordion
+    const { title, book_id, first_page } = accordion
     const id = book_id.replace(/\//g, '-')
+    let group = ''
     let groupedBooks = ''
     if (accordion.items) {
+      group = accordion.items.filter(item => item.book_id === meta_book_id) ? accordion.title : undefined
       const items = accordion.items.map(item => {
-        return `<li class="collapsible"><span class="chapter><a href="/${item.book_id}/${product_version}/index.html">${item.title}</a></span></li>`
+        const id = item.book_id.replace(/\//g, '-')
+        return `<li id="expand-${id}" ${item.book_id !== meta_book_id ? `onclick="getOtherToc('${item.book_id}', '${id}', '${product_version}', true)"` : `onclick="collapseToc('${id}')"`} class="collapsible${item.book_id !== meta_book_id ? '' : ' show'}"><span class="chapter"><a href="/guide/${item.book_id}/${product_version}/${item.first_page ? item.first_page : 'index.html'}">${item.title}</a></span></li><div id="children-${id}" style="margin-left:10px"></div>`
       }).join('')
-      groupedBooks = `<div class="toc"><ul class="toc">${items}</ul></div>`
+      groupedBooks = `<div class="toc groups"><ul class="toc">${items}</ul></div>`
     }
-    const accordionItem = `<div class="docChrome__sideNav__accordion"><div class="euiAccordion__triggerWrapper"><button ${book_id !== meta_book_id ? `onclick="getOtherToc('${book_id}', '${id}', '${product_version}')"` : `onclick="collapseToc('${id}')"`} id="expand-${id}" tabindex="-1" class="euiButtonIcon euiButtonIcon--xSmall euiAccordion__iconButton euiButtonIcon-empty-text-hoverStyles-euiAccordion__iconButton" type="button"><div class="euiIcon-arrowRight${book_id !== meta_book_id ? '' : ' open'}"></div></button><button class="euiAccordion__button css-qdnzvd-euiAccordion__button" type="button"><span class="euiAccordion__buttonContent docChrome__sideNav__accordionButton"><div class="euiText euiText-s"><a class="euiLink euiLink-text" href="/guide/${book_id}/${product_version}/index.html" rel="noreferrer"><strong>${title}</strong></a></div></span></button></div></div>
-    <div class="euiAccordion__childWrapper euiAccordion__childWrapper-isOpen" tabindex="-1" role="region"><div class=" euiAccordion__children"><div id="children-${id}" class="docChrome__sideNav__list${book_id !== meta_book_id ?' collapse' : ''}">${groupedBooks}</div></div></div>`
+    const isActive = book_id === meta_book_id || group === title
+    const accordionItem = `<div class="docChrome__sideNav__accordion"><div class="euiAccordion__triggerWrapper"><button ${!isActive ? `onclick="getOtherToc('${book_id}', '${id}', '${product_version}', false)"` : `onclick="collapseToc('${id}')"`} id="expand-${id}" tabindex="-1" class="euiButtonIcon euiButtonIcon--xSmall euiAccordion__iconButton euiButtonIcon-empty-text-hoverStyles-euiAccordion__iconButton" type="button"><div class="euiIcon-arrowRight${!isActive ? '' : ' open'}"></div></button><button class="euiAccordion__button css-qdnzvd-euiAccordion__button" type="button"><span class="euiAccordion__buttonContent docChrome__sideNav__accordionButton"><div class="euiText euiText-s"><a class="euiLink euiLink-text" href="/guide/${book_id}/${product_version}/${first_page ? first_page : 'index.html'}" rel="noreferrer"><strong>${title}</strong></a></div></span></button></div></div>
+    <div class="euiAccordion__childWrapper" tabindex="-1" role="region"><div class=" euiAccordion__children"><div id="children-${id}" class="docChrome__sideNav__list${!isActive ?' collapse' : ''}">${groupedBooks}</div></div></div>`
     
     $('#all_books').append(accordionItem)
+  })
+
+  $(`#expand-${meta_book_id.replace(/\//g, '-')}`).on('click', function(){
+    $(this).toggleClass('show')
+    $(`#children-${meta_book_id.replace(/\//g, '-')}`).toggle('.show');
   })
 
   var div = $('#current-toc');
@@ -356,12 +367,19 @@ $(function() {
   if (div.length == 0) {
     const id = meta_book_id.replace(/\//g, '-')
     $(`#children-${id}`).append('<div class="placeholder-box"><div class="loading-box"></div></div>'.repeat(12));
-
+    
     var url = location.href.replace(/[^\/]+$/, 'toc.html');
     const tocReq = $.get(url, {}, function(data) {
-      
-      $(`#children-${id}`).replaceWith(data);
-      $(`#children-${id}`).find('div.toc').attr('id', 'current-toc');
+      if (meta_group) {
+        const parent_id = id.replace(/-[^-]+$/m, '')
+        $(`#children-${id}`).html(data);
+        $(`#children-${id}`).find('div.toc').attr('id', 'current-toc');
+        $(`#current-toc`).find('ul.toc').css('display', 'block')
+        $(`#children-${parent_id}`).removeClass('collapse')
+      } else {
+        $(`#children-${id}`).replaceWith(data);
+        $(`#children-${id}`).find('div.toc').attr('id', 'current-toc');
+      }
       init_toc(LangStrings);
       utils.open_current(location.pathname);
       

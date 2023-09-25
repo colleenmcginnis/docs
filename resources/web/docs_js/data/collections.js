@@ -1,28 +1,33 @@
 export default {
   "Get started": [
     {
-      title: "Welcome to Elastic",
-      book_id: "en/starting-with-the-elasticsearch-platform-and-its-solutions"
+      title: "Starting with the Elasticsearch Platform and its Solutions",
+      book_id: "en/starting-with-the-elasticsearch-platform-and-its-solutions",
+      first_page: "introducing-elastic-documentation.html"
     },
   ],
   "Glossary": [
     {
       title: "Glossary",
-      book_id: "en/elastic-stack-glossary"
+      book_id: "en/elastic-stack-glossary",
+      first_page: "terms.html"
     },
   ],
   "Enterprise Search": [
     {
       title: "Enterprise Search Guide",
-      book_id: "en/enterprise-search"
+      book_id: "en/enterprise-search",
+      first_page: "start.html"
     },
     {
       title: "Workplace Search Guide",
-      book_id: "en/workplace-search"
+      book_id: "en/workplace-search",
+      first_page: "workplace-search-install.html"
     },
     {
       title: "App Search Guide",
-      book_id: "en/app-search"
+      book_id: "en/app-search",
+      first_page: "installation.html"
     },
     {
       title: "Site Search Reference",
@@ -70,7 +75,8 @@ export default {
     },
     {
       title: "APM Guide",
-      book_id: "en/apm/guide"
+      book_id: "en/apm/guide",
+      first_page: "apm-overview.html",
     },
     {
       title: "APM Agents",
@@ -78,43 +84,53 @@ export default {
       items: [
         {
           title: "APM Android Agent",
-          book_id: "en/apm/agent/android"
+          book_id: "en/apm/agent/android",
+          first_page: "intro.html"
         },
         {
           title: "APM Go Agent",
-          book_id: "en/apm/agent/go"
+          book_id: "en/apm/agent/go",
+          first_page: "introduction.html"
         },
         {
           title: "APM iOS Agent",
-          book_id: "en/apm/agent/swift"
+          book_id: "en/apm/agent/swift",
+          first_page: "intro.html"
         },
         {
           title: "APM Java Agent",
-          book_id: "en/apm/agent/java"
+          book_id: "en/apm/agent/java",
+          first_page: "intro.html"
         },
         {
           title: "APM .NET Agent",
-          book_id: "en/apm/agent/dotnet"
+          book_id: "en/apm/agent/dotnet",
+          first_page: "intro.html"
         },
         {
           title: "APM Node.js Agent",
-          book_id: "en/apm/agent/nodejs"
+          book_id: "en/apm/agent/nodejs",
+          first_page: "intro.html"
         },
         {
           title: "APM PHP Agent",
-          book_id: "en/apm/agent/php"
+          book_id: "en/apm/agent/php",
+          first_page: "intro.html"
         },
         {
           title: "APM Python Agent",
-          book_id: "en/apm/agent/python"
+          book_id: "en/apm/agent/python",
+          first_page: "getting-started.html"
         },
         {
           title: "APM Ruby Agent",
-          book_id: "en/apm/agent/ruby"
+          book_id: "en/apm/agent/ruby",
+          first_page: "introduction.html"
         },
         {
           title: "APM Real User Monitoring JavaScript Agent",
-          book_id: "en/apm/agent/rum-js"
+          book_id: "en/apm/agent/rum-js",
+          first_page: "intro.html"
         },
       ]
     },
@@ -124,11 +140,13 @@ export default {
       items: [
         {
           title: "APM AWS Lambda Extension",
-          book_id: "en/apm/lambda"
+          book_id: "en/apm/lambda",
+          first_page: "aws-lambda-arch.html"
         },
         {
           title: "APM Attacher",
-          book_id: "en/apm/attacher"
+          book_id: "en/apm/attacher",
+          first_page: "apm-attacher.html"
         },
       ]
     },
@@ -138,39 +156,48 @@ export default {
       items: [
         {
           title: "ECS Logging Overview",
-          book_id: "en/ecs-logging/overview"
+          book_id: "en/ecs-logging/overview",
+          first_page: "intro.html"
         },
         {
           title: "ECS Logging Go (Logrus) Reference",
-          book_id: "en/ecs-logging/go-logrus"
+          book_id: "en/ecs-logging/go-logrus",
+          first_page: "intro.html"
         },
         {
           title: "ECS Logging Go (Zap) Reference",
-          book_id: "en/ecs-logging/go-zap"
+          book_id: "en/ecs-logging/go-zap",
+          first_page: "intro.html"
         },
         {
           title: "ECS Logging Java Reference",
-          book_id: "en/ecs-logging/java"
+          book_id: "en/ecs-logging/java",
+          first_page: "intro.html"
         },
         {
           title: "ECS Logging .NET Reference",
-          book_id: "en/ecs-logging/dotnet"
+          book_id: "en/ecs-logging/dotnet",
+          first_page: "intro.html"
         },
         {
           title: "ECS Logging Node.js Reference",
-          book_id: "en/ecs-logging/nodejs"
+          book_id: "en/ecs-logging/nodejs",
+          first_page: "intro.html"
         },
         {
           title: "ECS Logging Ruby Reference",
-          book_id: "en/ecs-logging/ruby"
+          book_id: "en/ecs-logging/ruby",
+          first_page: "intro.html"
         },
         {
           title: "ECS Logging PHP Reference",
-          book_id: "en/ecs-logging/php"
+          book_id: "en/ecs-logging/php",
+          first_page: "intro.html"
         },
         {
           title: "ECS Logging Python Reference",
-          book_id: "en/ecs-logging/python"
+          book_id: "en/ecs-logging/python",
+          first_page: "intro.html"
         },
       ]
     }
@@ -178,11 +205,13 @@ export default {
   "Security": [
     {
       title: "Elastic Security",
-      book_id: "en/security"
+      book_id: "en/security",
+      first_page: "es-overview.html"
     },
     {
       title: "SIEM Guide",
-      book_id: "en/siem/guide"
+      book_id: "en/siem/guide",
+      first_page: "siem-overview.html"
     },
   ],
   "Elasticsearch": [
@@ -196,11 +225,13 @@ export default {
     },
     {
       title: "Painless Scripting Language",
-      book_id: "en/elasticsearch/painless"
+      book_id: "en/elasticsearch/painless",
+      first_page: "painless-guide.html"
     },
     {
       title: "Plugins and Integrations",
-      book_id: "en/elasticsearch/plugins"
+      book_id: "en/elasticsearch/plugins",
+      first_page: "intro.html"
     },
     {
       title: "Elasticsearch Clients",
@@ -262,11 +293,13 @@ export default {
     },
     {
       title: "Elasticsearch for Apache Hadoop and Spark",
-      book_id: "en/elasticsearch/hadoop"
+      book_id: "en/elasticsearch/hadoop",
+      first_page: "float.html"
     },
     {
       title: "Curator Index Management",
-      book_id: "en/elasticsearch/client/curator"
+      book_id: "en/elasticsearch/client/curator",
+      first_page: "ilm.html"
     },
   ],
   "Kibana": [
@@ -278,23 +311,28 @@ export default {
   "Elastic Cloud": [
     {
       title: "Elasticsearch Service - Hosted Elastic Stack",
-      book_id: "en/cloud"
+      book_id: "en/cloud",
+      first_page: "ec-getting-started.html"
     },
     {
       title: "Elasticsearch Add-On for Heroku - Hosted Elasticsearch and Kibana for Heroku Users",
-      book_id: "en/cloud-heroku"
+      book_id: "en/cloud-heroku",
+      first_page: "ech-getting-started.html"
     },
     {
       title: "Elastic Cloud Enterprise - Elastic Cloud on your Infrastructure",
-      book_id: "en/cloud-enterprise"
+      book_id: "en/cloud-enterprise",
+      first_page: "Elastic-Cloud-Enterprise-overview.html"
     },
     {
       title: "Elastic Cloud on Kubernetes",
-      book_id: "en/cloud-on-k8s"
+      book_id: "en/cloud-on-k8s",
+      first_page: "k8s-overview.html"
     },
     {
       title: "Elastic Cloud Control - The Command-Line Interface for Elasticsearch Service and ECE",
-      book_id: "en/ecctl"
+      book_id: "en/ecctl",
+      first_page: "ecctl-overview.html"
     },
     {
       title: "Elastic Cloud Terraform Provider",
@@ -304,53 +342,65 @@ export default {
   "Elastic Stack": [
     {
       title: "Installation and Upgrade Guide",
-      book_id: "en/elastic-stack"
+      book_id: "en/elastic-stack",
+      first_page: "overview.html"
     },
     {
       title: "Machine Learning",
-      book_id: "en/machine-learning"
+      book_id: "en/machine-learning",
+      first_page: "machine-learning-intro.html"
     },
     {
       title: "Elasticsearch Relevance Engine (ESRE)",
-      book_id: "en/esre"
+      book_id: "en/esre",
+      first_page: "learn.html"
     },
     {
       title: "Elastic Common Schema (ECS) Reference",
-      book_id: "en/ecs"
+      book_id: "en/ecs",
+      first_page: "ecs-reference.html"
     },
     {
       title: "Elastic Ingest Reference Architectures",
-      book_id: "en/ingest"
+      book_id: "en/ingest",
+      first_page: "use-case-arch.html"
     },
     {
       title: "Azure Marketplace and Resource Manager (ARM) template",
-      book_id: "en/elastic-stack-deploy"
+      book_id: "en/elastic-stack-deploy",
+      first_page: "azure-marketplace-arm-template-introduction.html"
     },
   ],
   "Data ingest": [
     {
       title: "Logstash Reference",
-      book_id: "en/logstash"
+      book_id: "en/logstash",
+      first_page: "introduction.html"
     },
     {
       title: "Logstash Versioned Plugin Reference",
-      book_id: "en/logstash-versioned-plugins"
+      book_id: "en/logstash-versioned-plugins",
+      first_page: "integration-plugins.html"
     },
     {
       title: "Fleet and Elastic Agent Guide",
-      book_id: "en/fleet"
+      book_id: "en/fleet",
+      first_page: "fleet-overview.html"
     },
     {
       title: "Integrations Developer Guide",
-      book_id: "en/integrations-developer"
+      book_id: "en/integrations-developer",
+      first_page: "what-is-an-integration.html"
     },
     {
       title: "Elastic Serverless Forwarder Guide",
-      book_id: "en/esf"
+      book_id: "en/esf",
+      first_page: "aws-elastic-serverless-forwarder.html"
     },
     {
       title: "Amazon Kinesis Data Firehose Ingest Guide",
-      book_id: "en/kinesis"
+      book_id: "en/kinesis",
+      first_page: "aws-firehose.html"
     },
     {
       title: "Beats Platform Reference",
@@ -402,19 +452,23 @@ export default {
   "Legacy documentation": [
     {
       title: "Legacy APM Overview",
-      book_id: "en/apm/get-started"
+      book_id: "en/apm/get-started",
+      first_page: "overview.html"
     },
     {
       title: "Legacy APM Server Reference",
-      book_id: "en/apm/server"
+      book_id: "en/apm/server",
+      first_page: "overview.html"
     },
     {
       title: "Getting Started",
-      book_id: "en/elastic-stack-get-started"
+      book_id: "en/elastic-stack-get-started",
+      first_page: "get-started-elastic-stack.html"
     },
     {
       title: "Elastic Stack and Google Cloud's Anthos",
-      book_id: "en/elastic-stack-gke"
+      book_id: "en/elastic-stack-gke",
+      first_page: "gke-on-prem-introduction.html"
     },
     {
       title: "Journalbeat Reference for 6.5-7.15",

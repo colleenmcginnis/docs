@@ -1376,7 +1376,7 @@ contents:
                     subject:    APM
                     collection: Observability
                     group:      APM Agents
-                    book_id:    apm/agent/android
+                    book_id:    en/apm/agent/android
                     chunk:      1
                     sources:
                       -
@@ -1395,7 +1395,7 @@ contents:
                     subject:    APM
                     collection: Observability
                     group:      APM Agents
-                    book_id:    apm/agent/go
+                    book_id:    en/apm/agent/go
                     chunk:      1
                     sources:
                       -
@@ -1415,7 +1415,7 @@ contents:
                     subject: APM
                     collection: Observability
                     group:      APM Agents
-                    book_id:    apm/agent/swift
+                    book_id:    en/apm/agent/swift
                     chunk: 1
                     sources:
                       -
@@ -1434,7 +1434,7 @@ contents:
                     subject:    APM
                     collection: Observability
                     group:      APM Agents
-                    book_id:    apm/agent/java
+                    book_id:    en/apm/agent/java
                     chunk:      1
                     sources:
                       -
@@ -1460,7 +1460,7 @@ contents:
                     subject:    APM
                     collection: Observability
                     group:      APM Agents
-                    book_id:    apm/agent/dotnet
+                    book_id:    en/apm/agent/dotnet
                     chunk:      1
                     sources:
                       -
@@ -1479,7 +1479,7 @@ contents:
                     subject:    APM
                     collection: Observability
                     group:      APM Agents
-                    book_id:    apm/agent/nodejs
+                    book_id:    en/apm/agent/nodejs
                     chunk:      1
                     sources:
                       -
@@ -1506,7 +1506,7 @@ contents:
                     subject:    APM
                     collection: Observability
                     group:      APM Agents
-                    book_id:    apm/agent/php
+                    book_id:    en/apm/agent/php
                     chunk:      1
                     sources:
                       -
@@ -1525,7 +1525,7 @@ contents:
                     subject:    APM
                     collection: Observability
                     group:      APM Agents
-                    book_id:    apm/agent/python
+                    book_id:    en/apm/agent/python
                     chunk:      1
                     sources:
                       -
@@ -1551,7 +1551,7 @@ contents:
                     subject:    APM
                     collection: Observability
                     group:      APM Agents
-                    book_id:    apm/agent/ruby
+                    book_id:    en/apm/agent/ruby
                     chunk:      1
                     sources:
                       -
@@ -1571,7 +1571,7 @@ contents:
                     subject:    APM
                     collection: Observability
                     group:      APM Agents
-                    book_id:    apm/agent/rum-js
+                    book_id:    en/apm/agent/rum-js
                     chunk:      1
                     sources:
                       -
