@@ -297,6 +297,7 @@ sub _build_book {
     my $collection    = $self->collection;
     my $group         = $self->group;
     my $book_id       = $self->book_id;
+    my $current       = $self->current;
     my $lang          = $self->lang;
 
     return 0 unless $rebuild ||
@@ -325,6 +326,7 @@ sub _build_book {
                 collection    => $collection,
                 group         => $group,
                 book_id       => $book_id,
+                current       => $current,
                 toc           => $self->toc,
                 resource      => [$checkout],
                 latest        => $latest,
@@ -353,6 +355,7 @@ sub _build_book {
                 collection    => $collection,
                 group         => $group,
                 book_id       => $book_id,
+                current       => $current,
                 resource      => [$checkout],
                 latest        => $latest,
                 respect_edit_url_overrides => $self->{respect_edit_url_overrides},

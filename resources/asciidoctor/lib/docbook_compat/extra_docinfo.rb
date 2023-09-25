@@ -39,6 +39,7 @@ module DocbookCompat
         docbook_compat_meta('DC.collection', attributes['dc.collection']),
         docbook_compat_meta('DC.group', attributes['dc.group']),
         docbook_compat_meta('DC.book_id', attributes['dc.book_id']),
+        docbook_compat_meta('DC.current', attributes['dc.current']),
         docbook_compat_meta('DC.identifier', attributes['dc.identifier']),
         if attributes['noindex']
           docbook_compat_meta('robots', 'noindex,nofollow')

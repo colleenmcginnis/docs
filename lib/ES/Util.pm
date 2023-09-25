@@ -47,6 +47,7 @@ sub build_chunked {
     my $collection  = $opts{collection}    || '';
     my $group       = $opts{group}         || '';
     my $book_id     = $opts{book_id}       || '';
+    my $current     = $opts{current}       || '';
     my $private     = $opts{private}       || '';
     my $resources   = $opts{resource}      || [];
     my $noindex     = $opts{noindex}       || '';
@@ -125,6 +126,7 @@ sub build_chunked {
             '-a' => 'dc.collection=' . $collection,
             '-a' => 'dc.group=' . $group,
             '-a' => 'dc.book_id=' . $book_id,
+            '-a' => 'dc.current=' . $current,
             '-a' => 'dc.identifier=' . $version,
             $multi ? ( '-a' => "title-extra= [$version]" ) : (),
             $noindex ? ('-a' => 'noindex') : (),
@@ -166,6 +168,7 @@ sub build_single {
     my $collection  = $opts{collection}    || '';
     my $group       = $opts{group}         || '';
     my $book_id     = $opts{book_id}       || '';
+    my $current     = $opts{current}       || '';
     my $private     = $opts{private}       || '';
     my $noindex     = $opts{noindex}       || '';
     my $resources   = $opts{resource}      || [];
@@ -237,6 +240,7 @@ sub build_single {
             '-a' => 'dc.collection=' . $collection,
             '-a' => 'dc.group=' . $group,
             '-a' => 'dc.book_id=' . $book_id,
+            '-a' => 'dc.current=' . $current,
             '-a' => 'dc.identifier=' . $version,
             $multi ? ( '-a' => "title-extra= [$version]" ) : (),
             $noindex ? ('-a' => 'noindex') : (),
