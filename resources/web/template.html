@@ -184,8 +184,8 @@
   <script>
     let fetched = []
     function getOtherToc (book_id, id, version, group) {
+      if (!fetched.includes(book_id)) {
         $.get('https://www.elastic.co' + '/guide/' + book_id + '/' + version + '/toc.html', {}, function(data) {
-        if (!fetched.includes(book_id)) {
           $(`#children-${id}`).append(data);
           $(`#children-${id}`).find('a').each(function() {
             this.href = `/guide/${book_id}/${version}/${$(this).attr('href')}`
@@ -203,11 +203,12 @@
                 li.addClass('show');
               }
             });
-          });
-
+          })
           fetched.push(book_id)
-        }
-      });
+        }).fail(function(group) {
+          if (!group) alert(`There is no version ${version} of this book.`);
+        })
+      }
 
       if (group) {
         $(`#expand-${id}`).toggleClass('show');
@@ -217,9 +218,9 @@
         $(`#expand-${id} div:first-child`).toggleClass('open');
       }
     }
-    function collapseToc (id) {
+    function collapseToc (id, containsGroups) {
       $(`#expand-${id} div:first-child`).toggleClass('open');
-      $(`#children-${id}`).toggle('.collapse');
+      if (containsGroups) $(`#children-${id}`).toggle('.collapse');
     }
   </script>
   <!-- DOCS FINAL -->

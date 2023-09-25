@@ -3,7 +3,8 @@ export default {
     {
       title: "Starting with the Elasticsearch Platform and its Solutions",
       book_id: "en/starting-with-the-elasticsearch-platform-and-its-solutions",
-      first_page: "introducing-elastic-documentation.html"
+      first_page: "introducing-elastic-documentation.html",
+      stack: true
     },
   ],
   "Glossary": [
@@ -17,21 +18,25 @@ export default {
     {
       title: "Enterprise Search Guide",
       book_id: "en/enterprise-search",
-      first_page: "start.html"
+      first_page: "start.html",
+      stack: true
     },
     {
       title: "Workplace Search Guide",
       book_id: "en/workplace-search",
-      first_page: "workplace-search-install.html"
+      first_page: "workplace-search-install.html",
+      stack: true
     },
     {
       title: "App Search Guide",
       book_id: "en/app-search",
-      first_page: "installation.html"
+      first_page: "installation.html",
+      stack: true
     },
     {
       title: "Site Search Reference",
-      book_id: "en/swiftype/sitesearch"
+      book_id: "en/swiftype/sitesearch",
+      stack: true
     },
     {
       title: "Enterprise Search Clients",
@@ -39,31 +44,38 @@ export default {
       items: [
         {
           title: "App Search JavaScript client",
-          book_id: "en/enterprise-search-clients/app-search-javascript"
+          book_id: "en/enterprise-search-clients/app-search-javascript",
+          stack: true
         },
         {
           title: "App Search Node.js client",
-          book_id: "en/enterprise-search-clients/app-search-node"
+          book_id: "en/enterprise-search-clients/app-search-node",
+          stack: true
         },
         {
           title: "Enterprise Search Node.js client",
-          book_id: "en/enterprise-search-clients/enterprise-search-node"
+          book_id: "en/enterprise-search-clients/enterprise-search-node",
+          stack: true
         },
         {
           title: "Enterprise Search PHP client",
-          book_id: "en/enterprise-search-clients/php"
+          book_id: "en/enterprise-search-clients/php",
+          stack: true
         },
         {
           title: "Enterprise Search Python client",
-          book_id: "en/enterprise-search-clients/python"
+          book_id: "en/enterprise-search-clients/python",
+          stack: true
         },
         {
           title: "Enterprise Search Ruby client",
-          book_id: "en/enterprise-search-clients/ruby"
+          book_id: "en/enterprise-search-clients/ruby",
+          stack: true
         },
         {
           title: "Workplace Search Node.js client",
-          book_id: "en/enterprise-search-clients/workplace-search-node"
+          book_id: "en/enterprise-search-clients/workplace-search-node",
+          stack: true
         },
       ]
     },
@@ -71,12 +83,14 @@ export default {
   "Observability": [
     {
       title: "Observability",
-      book_id: "en/observability"
+      book_id: "en/observability",
+      stack: true
     },
     {
       title: "APM Guide",
       book_id: "en/apm/guide",
       first_page: "apm-overview.html",
+      stack: true
     },
     {
       title: "APM Agents",
@@ -136,7 +150,7 @@ export default {
     },
     {
       title: "APM Extensions",
-      book_id: "en/apm/lambda",
+      book_id: "",
       items: [
         {
           title: "APM AWS Lambda Extension",
@@ -206,7 +220,8 @@ export default {
     {
       title: "Elastic Security",
       book_id: "en/security",
-      first_page: "es-overview.html"
+      first_page: "es-overview.html",
+      stack: true
     },
     {
       title: "SIEM Guide",
@@ -217,7 +232,8 @@ export default {
   "Elasticsearch": [
     {
       title: "Elasticsearch Guide",
-      book_id: "en/elasticsearch/reference"
+      book_id: "en/elasticsearch/reference",
+      stack: true
     },
     {
       title: "Elasticsearch Resiliency Status",
@@ -226,12 +242,14 @@ export default {
     {
       title: "Painless Scripting Language",
       book_id: "en/elasticsearch/painless",
-      first_page: "painless-guide.html"
+      first_page: "painless-guide.html",
+      stack: true
     },
     {
       title: "Plugins and Integrations",
       book_id: "en/elasticsearch/plugins",
-      first_page: "intro.html"
+      first_page: "intro.html",
+      stack: true
     },
     {
       title: "Elasticsearch Clients",
@@ -239,43 +257,60 @@ export default {
       items: [
         {
           title: "Java Client",
-          book_id: "en/elasticsearch/client/java-api-client"
+          book_id: "en/elasticsearch/client/java-api-client",
+          first_page: "introduction.html",
+          stack: true
         },
         {
           title: "JavaScript Client",
-          book_id: "en/elasticsearch/client/javascript-api"
+          book_id: "en/elasticsearch/client/javascript-api",
+          first_page: "introduction.html",
+          stack: true
         },
         {
           title: "Ruby Client",
-          book_id: "en/elasticsearch/client/ruby-api"
+          book_id: "en/elasticsearch/client/ruby-api",
+          first_page: "ruby_client.html",
+          stack: true
         },
         {
           title: "Go Client",
-          book_id: "en/elasticsearch/client/go-api"
+          book_id: "en/elasticsearch/client/go-api",
+          first_page: "overview.html",
+          stack: true
         },
         {
           title: ".NET Clients",
-          book_id: "en/elasticsearch/client/net-api"
+          book_id: "en/elasticsearch/client/net-api",
+          first_page: "introduction.html",
+          stack: true
         },
         {
           title: "PHP Client",
-          book_id: "en/elasticsearch/client/php-api"
+          book_id: "en/elasticsearch/client/php-api",
+          first_page: "",
+          stack: true
         },
         {
           title: "Perl Client",
-          book_id: "en/elasticsearch/client/perl-api"
+          book_id: "en/elasticsearch/client/perl-api",
+          stack: true
         },
         {
           title: "Python Client",
-          book_id: "en/elasticsearch/client/python-api"
+          book_id: "en/elasticsearch/client/python-api",
+          first_page: "overview.html",
+          stack: true
         },
         {
           title: "eland",
-          book_id: "en/elasticsearch/client/eland"
+          book_id: "en/elasticsearch/client/eland",
+          stack: true
         },
         {
           title: "Rust Client",
-          book_id: "en/elasticsearch/client/rust-api"
+          book_id: "en/elasticsearch/client/rust-api",
+          stack: true
         },
         {
           title: "Java REST Client (deprecated)",
@@ -283,18 +318,19 @@ export default {
         },
         {
           title: "Java Transport Client (deprecated)",
-          book_id: "en/elasticsearch/client/java-api"
+          book_id: "en/elasticsearch/client/java-api",
         },
         {
           title: "Community Contributed Clients",
-          book_id: "en/elasticsearch/client/community"
+          book_id: "en/elasticsearch/client/community",
         },
       ],
     },
     {
       title: "Elasticsearch for Apache Hadoop and Spark",
       book_id: "en/elasticsearch/hadoop",
-      first_page: "float.html"
+      first_page: "float.html",
+      stack: true
     },
     {
       title: "Curator Index Management",
@@ -305,7 +341,8 @@ export default {
   "Kibana": [
     {
       title: "Kibana Guide",
-      book_id: "en/kibana"
+      book_id: "en/kibana",
+      stack: true
     },
   ],
   "Elastic Cloud": [
@@ -343,39 +380,46 @@ export default {
     {
       title: "Installation and Upgrade Guide",
       book_id: "en/elastic-stack",
-      first_page: "overview.html"
+      first_page: "overview.html",
+      stack: true
     },
     {
       title: "Machine Learning",
       book_id: "en/machine-learning",
-      first_page: "machine-learning-intro.html"
+      first_page: "machine-learning-intro.html",
+      stack: true
     },
     {
       title: "Elasticsearch Relevance Engine (ESRE)",
       book_id: "en/esre",
-      first_page: "learn.html"
+      first_page: "learn.html",
+      stack: true
     },
     {
       title: "Elastic Common Schema (ECS) Reference",
       book_id: "en/ecs",
-      first_page: "ecs-reference.html"
+      first_page: "ecs-reference.html",
+      stack: true
     },
     {
       title: "Elastic Ingest Reference Architectures",
       book_id: "en/ingest",
-      first_page: "use-case-arch.html"
+      first_page: "use-case-arch.html",
+      stack: true
     },
     {
       title: "Azure Marketplace and Resource Manager (ARM) template",
       book_id: "en/elastic-stack-deploy",
-      first_page: "azure-marketplace-arm-template-introduction.html"
+      first_page: "azure-marketplace-arm-template-introduction.html",
+      stack: true
     },
   ],
   "Data ingest": [
     {
       title: "Logstash Reference",
       book_id: "en/logstash",
-      first_page: "introduction.html"
+      first_page: "introduction.html",
+      stack: true
     },
     {
       title: "Logstash Versioned Plugin Reference",
@@ -385,7 +429,8 @@ export default {
     {
       title: "Fleet and Elastic Agent Guide",
       book_id: "en/fleet",
-      first_page: "fleet-overview.html"
+      first_page: "fleet-overview.html",
+      stack: true
     },
     {
       title: "Integrations Developer Guide",
@@ -408,43 +453,63 @@ export default {
       items: [
         {
           title: "Beats Platform Reference",
-          book_id: "en/beats/libbeat"
+          book_id: "en/beats/libbeat",
+          first_page: "",
+          stack: true
         },
         {
           title: "Auditbeat Reference",
-          book_id: "en/beats/auditbeat"
+          book_id: "en/beats/auditbeat",
+          first_page: "",
+          stack: true
         },
         {
           title: "Filebeat Reference",
-          book_id: "en/beats/filebeat"
+          book_id: "en/beats/filebeat",
+          first_page: "",
+          stack: true
         },
         {
           title: "Functionbeat Reference",
-          book_id: "en/beats/functionbeat"
+          book_id: "en/beats/functionbeat",
+          first_page: "",
+          stack: true
         },
         {
           title: "Heartbeat Reference",
-          book_id: "en/beats/heartbeat"
+          book_id: "en/beats/heartbeat",
+          first_page: "",
+          stack: true
         },
         {
           title: "Metricbeat Reference",
-          book_id: "en/beats/metricbeat"
+          book_id: "en/beats/metricbeat",
+          first_page: "",
+          stack: true
         },
         {
           title: "Packetbeat Reference",
-          book_id: "en/beats/packetbeat"
+          book_id: "en/beats/packetbeat",
+          first_page: "",
+          stack: true
         },
         {
           title: "Winlogbeat Reference",
-          book_id: "en/beats/winlogbeat"
+          book_id: "en/beats/winlogbeat",
+          first_page: "",
+          stack: true
         },
         {
           title: "Beats Developer Guide",
-          book_id: "en/beats/devguide"
+          book_id: "en/beats/devguide",
+          first_page: "",
+          stack: true
         },
         {
           title: "Elastic Logging Plugin for Docker",
-          book_id: "en/beats/loggingplugin"
+          book_id: "en/beats/loggingplugin",
+          first_page: "",
+          stack: true
         },
       ]
     }
