@@ -193,8 +193,8 @@
           if (group) {
             $(`#children-${id}`).find('ul.toc').toggle('.show');
           }
-          $('div.toc li ul').each(function(thing) {
-            const li = $(this).parent();
+          $('div.toc li ul').each(function() {
+            var li = $(this).parent();
             li.addClass('collapsible').children('span').click(function() {
               if (li.hasClass('show')) {
                 li.add(li.find('li.show')).removeClass('show');

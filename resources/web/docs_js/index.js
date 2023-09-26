@@ -222,12 +222,15 @@ $(function() {
   const meta_tag_product_version = $('meta[name="product_version"]')
 
   const meta_collection = meta_tag_collection && meta_tag_collection[0].content
-  const meta_book_id = meta_tag_book_id && meta_tag_book_id[0].content || 'en/observability'
+  const meta_book_id = meta_tag_book_id && meta_tag_book_id[0].content
   const meta_group = meta_tag_group && meta_tag_group[0].content
   const meta_current = meta_tag_current && meta_tag_current[0].content || 'current'
   const meta_product_version = meta_tag_product_version && meta_tag_product_version[0].content || 'master'
   
-  const isCurrent = meta_product_version === meta_current || meta_product_version === 'latest'
+  const isCurrent = meta_product_version === meta_current
+    || meta_product_version === 'latest'
+    || (meta_product_version === 'master' && meta_current === 'main')
+    || (meta_product_version === 'main' && meta_current === 'master')
   const product_version = isCurrent ? 'current' : meta_product_version
 
   var lang = $('section#guide[lang]').attr('lang') || 'en';
@@ -409,7 +412,6 @@ $(function() {
     });
   } else {
     init_toc(LangStrings);
-    // Style book landing page (no main content, just a TOC and demand gen content)
     // Set the width of the left column to zero
     left_col.removeClass().addClass('col-0');
     bottom_left_col.removeClass().addClass('col-0');
